@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF760D3B2632EEE9003E1000 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = EF760D3A2632EEE9003E1000 /* Eureka */; };
 		EFD439F22632DDD900B4DE14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F12632DDD900B4DE14 /* AppDelegate.swift */; };
 		EFD439F62632DDD900B4DE14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F52632DDD900B4DE14 /* ViewController.swift */; };
 		EFD439FB2632DDDB00B4DE14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD439FA2632DDDB00B4DE14 /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF8061525A20526EAE33A32D /* Pods_YourNews.framework in Frameworks */,
+				EF760D3B2632EEE9003E1000 /* Eureka in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +247,9 @@
 			dependencies = (
 			);
 			name = YourNews;
+			packageProductDependencies = (
+				EF760D3A2632EEE9003E1000 /* Eureka */,
+			);
 			productName = YourNews;
 			productReference = EFD439EE2632DDD900B4DE14 /* YourNews.app */;
 			productType = "com.apple.product-type.application";
@@ -272,6 +277,9 @@
 				Base,
 			);
 			mainGroup = EFD439E52632DDD900B4DE14;
+			packageReferences = (
+				EF760D392632EEE9003E1000 /* XCRemoteSwiftPackageReference "Eureka" */,
+			);
 			productRefGroup = EFD439EF2632DDD900B4DE14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -564,6 +572,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EF760D392632EEE9003E1000 /* XCRemoteSwiftPackageReference "Eureka" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/xmartlabs/Eureka.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EF760D3A2632EEE9003E1000 /* Eureka */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF760D392632EEE9003E1000 /* XCRemoteSwiftPackageReference "Eureka" */;
+			productName = Eureka;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EFD439E62632DDD900B4DE14 /* Project object */;
 }
