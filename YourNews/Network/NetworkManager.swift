@@ -19,7 +19,7 @@ protocol Networkable {
 //
 class NetworkManager: Networkable {
   
-  fileprivate let provider = MoyaProvider<NewsAPI>()
+  fileprivate let provider = MoyaProvider<NewsAPI>(plugins: [NetworkManager.loggingPlugin()])
   func fetchData(target: NewsAPI , complitionHandler: @escaping (NewsResponse?, APIError?) -> Void) {
     
     provider.request(target) { (result) in
@@ -41,3 +41,18 @@ class NetworkManager: Networkable {
     }
   }
 }
+
+// MARK: Helpers
+//
+private extension NetworkManager {
+  
+  /// Logging plugin
+  ///
+  static func loggingPlugin() -> NetworkLoggerPlugin {
+    NetworkLoggerPlugin(
+      configuration: .init(logOptions: .verbose)
+    )
+  }
+}
+
+
