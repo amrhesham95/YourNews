@@ -25,4 +25,15 @@ extension UITableView {
         }
     }
   
+  /// Dequeue a previously registered cell by it's class `reuseIdentifier` property.
+  /// Failing to dequeue the cell will throw a `fatalError`
+  ///
+  func dequeueReusableCell<T: UITableViewCell>(_ type: T.Type, for indexPath: IndexPath) -> T {
+      guard let cell = dequeueReusableCell(withIdentifier: T.classNameWithoutNamespaces, for: indexPath) as? T else {
+          let message = "Could not dequeue cell with identifier \(T.classNameWithoutNamespaces) at \(indexPath)"
+          NSLog(message)
+          fatalError(message)
+      }
+      return cell
+  }
 }
