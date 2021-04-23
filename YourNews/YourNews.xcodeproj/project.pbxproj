@@ -11,6 +11,14 @@
 		EFD439F62632DDD900B4DE14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F52632DDD900B4DE14 /* ViewController.swift */; };
 		EFD439FB2632DDDB00B4DE14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD439FA2632DDDB00B4DE14 /* Assets.xcassets */; };
 		EFD439FE2632DDDB00B4DE14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFD439FC2632DDDB00B4DE14 /* LaunchScreen.storyboard */; };
+		EFD43A142632DE7400B4DE14 /* BehaviorSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A0B2632DE7400B4DE14 /* BehaviorSubject.swift */; };
+		EFD43A152632DE7400B4DE14 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A0C2632DE7400B4DE14 /* Observer.swift */; };
+		EFD43A162632DE7400B4DE14 /* PublishSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A0D2632DE7400B4DE14 /* PublishSubject.swift */; };
+		EFD43A172632DE7400B4DE14 /* DisposeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A0F2632DE7400B4DE14 /* DisposeBase.swift */; };
+		EFD43A182632DE7400B4DE14 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A102632DE7400B4DE14 /* DisposeBag.swift */; };
+		EFD43A192632DE7400B4DE14 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A112632DE7400B4DE14 /* Disposable.swift */; };
+		EFD43A1A2632DE7400B4DE14 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A122632DE7400B4DE14 /* Observable.swift */; };
+		EFD43A1B2632DE7400B4DE14 /* ObservationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A132632DE7400B4DE14 /* ObservationToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +28,14 @@
 		EFD439FA2632DDDB00B4DE14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFD439FD2632DDDB00B4DE14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFD439FF2632DDDB00B4DE14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFD43A0B2632DE7400B4DE14 /* BehaviorSubject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BehaviorSubject.swift; sourceTree = "<group>"; };
+		EFD43A0C2632DE7400B4DE14 /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		EFD43A0D2632DE7400B4DE14 /* PublishSubject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishSubject.swift; sourceTree = "<group>"; };
+		EFD43A0F2632DE7400B4DE14 /* DisposeBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBase.swift; sourceTree = "<group>"; };
+		EFD43A102632DE7400B4DE14 /* DisposeBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
+		EFD43A112632DE7400B4DE14 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
+		EFD43A122632DE7400B4DE14 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		EFD43A132632DE7400B4DE14 /* ObservationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservationToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +52,7 @@
 		EFD439E52632DDD900B4DE14 = {
 			isa = PBXGroup;
 			children = (
+				EFD43A092632DE5F00B4DE14 /* Tools */,
 				EFD439F02632DDD900B4DE14 /* YourNews */,
 				EFD439EF2632DDD900B4DE14 /* Products */,
 			);
@@ -59,6 +76,37 @@
 				EFD439FF2632DDDB00B4DE14 /* Info.plist */,
 			);
 			path = YourNews;
+			sourceTree = "<group>";
+		};
+		EFD43A092632DE5F00B4DE14 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				EFD43A0A2632DE7400B4DE14 /* Observables */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		EFD43A0A2632DE7400B4DE14 /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+				EFD43A0B2632DE7400B4DE14 /* BehaviorSubject.swift */,
+				EFD43A0C2632DE7400B4DE14 /* Observer.swift */,
+				EFD43A0D2632DE7400B4DE14 /* PublishSubject.swift */,
+				EFD43A0E2632DE7400B4DE14 /* Disposables */,
+				EFD43A122632DE7400B4DE14 /* Observable.swift */,
+				EFD43A132632DE7400B4DE14 /* ObservationToken.swift */,
+			);
+			path = Observables;
+			sourceTree = "<group>";
+		};
+		EFD43A0E2632DE7400B4DE14 /* Disposables */ = {
+			isa = PBXGroup;
+			children = (
+				EFD43A0F2632DE7400B4DE14 /* DisposeBase.swift */,
+				EFD43A102632DE7400B4DE14 /* DisposeBag.swift */,
+				EFD43A112632DE7400B4DE14 /* Disposable.swift */,
+			);
+			path = Disposables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,8 +178,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFD43A1B2632DE7400B4DE14 /* ObservationToken.swift in Sources */,
+				EFD43A162632DE7400B4DE14 /* PublishSubject.swift in Sources */,
+				EFD43A192632DE7400B4DE14 /* Disposable.swift in Sources */,
 				EFD439F62632DDD900B4DE14 /* ViewController.swift in Sources */,
+				EFD43A172632DE7400B4DE14 /* DisposeBase.swift in Sources */,
+				EFD43A1A2632DE7400B4DE14 /* Observable.swift in Sources */,
+				EFD43A152632DE7400B4DE14 /* Observer.swift in Sources */,
+				EFD43A142632DE7400B4DE14 /* BehaviorSubject.swift in Sources */,
 				EFD439F22632DDD900B4DE14 /* AppDelegate.swift in Sources */,
+				EFD43A182632DE7400B4DE14 /* DisposeBag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
