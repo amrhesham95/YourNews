@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "date.pdf",
       "idiom" : "universal"
     }
   ],
