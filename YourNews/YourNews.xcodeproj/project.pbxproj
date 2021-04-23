@@ -19,6 +19,7 @@
 		EFD43A192632DE7400B4DE14 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A112632DE7400B4DE14 /* Disposable.swift */; };
 		EFD43A1A2632DE7400B4DE14 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A122632DE7400B4DE14 /* Observable.swift */; };
 		EFD43A1B2632DE7400B4DE14 /* ObservationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A132632DE7400B4DE14 /* ObservationToken.swift */; };
+		EFD43A1F2632DEBC00B4DE14 /* StretchyTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A1E2632DEBC00B4DE14 /* StretchyTableHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		EFD43A112632DE7400B4DE14 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		EFD43A122632DE7400B4DE14 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		EFD43A132632DE7400B4DE14 /* ObservationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservationToken.swift; sourceTree = "<group>"; };
+		EFD43A1E2632DEBC00B4DE14 /* StretchyTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyTableHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		EFD439E52632DDD900B4DE14 = {
 			isa = PBXGroup;
 			children = (
+				EFD43A1D2632DEB100B4DE14 /* ReusableViews */,
 				EFD43A092632DE5F00B4DE14 /* Tools */,
 				EFD439F02632DDD900B4DE14 /* YourNews */,
 				EFD439EF2632DDD900B4DE14 /* Products */,
@@ -107,6 +110,14 @@
 				EFD43A112632DE7400B4DE14 /* Disposable.swift */,
 			);
 			path = Disposables;
+			sourceTree = "<group>";
+		};
+		EFD43A1D2632DEB100B4DE14 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				EFD43A1E2632DEBC00B4DE14 /* StretchyTableHeaderView.swift */,
+			);
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFD43A1F2632DEBC00B4DE14 /* StretchyTableHeaderView.swift in Sources */,
 				EFD43A1B2632DE7400B4DE14 /* ObservationToken.swift in Sources */,
 				EFD43A162632DE7400B4DE14 /* PublishSubject.swift in Sources */,
 				EFD43A192632DE7400B4DE14 /* Disposable.swift in Sources */,
