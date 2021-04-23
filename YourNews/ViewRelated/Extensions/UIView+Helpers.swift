@@ -141,17 +141,3 @@ extension UIView {
     return nil
   }
 }
-
-// MARK: - Metics Helpers
-//
-extension UIView {
-  
-  /// Apply default height
-  ///
-  func applyDefaultHeight() {
-    let heightConstraint = heightAnchor.constraint(equalToConstant: UISettings.defaultHeight)
-    heightConstraint.priority = .defaultHigh
-    heightConstraint.isActive = true
-  }
-}
-
