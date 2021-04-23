@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF760D3B2632EEE9003E1000 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = EF760D3A2632EEE9003E1000 /* Eureka */; };
+		EF760D3B2632EEE9003E1000 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = EF760D3A2632EEE9003E1000 /* SwiftPackageProductDependency */; };
 		EF760D402632EF4A003E1000 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D3F2632EF4A003E1000 /* OnboardingViewController.swift */; };
 		EF760D472632EFAC003E1000 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D462632EFAC003E1000 /* FormViewController.swift */; };
 		EF760D4B2632F0F6003E1000 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D4A2632F0F6003E1000 /* ViewModel.swift */; };
@@ -109,7 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF8061525A20526EAE33A32D /* Pods_YourNews.framework in Frameworks */,
-				EF760D3B2632EEE9003E1000 /* Eureka in Frameworks */,
+				EF760D3B2632EEE9003E1000 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +317,7 @@
 				EFD439EB2632DDD900B4DE14 /* Frameworks */,
 				EFD439EC2632DDD900B4DE14 /* Resources */,
 				EFD43A622632E72500B4DE14 /* SwiftGen */,
+				33256DD89E7094CF45C8A876 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -324,7 +325,7 @@
 			);
 			name = YourNews;
 			packageProductDependencies = (
-				EF760D3A2632EEE9003E1000 /* Eureka */,
+				EF760D3A2632EEE9003E1000 /* SwiftPackageProductDependency */,
 			);
 			productName = YourNews;
 			productReference = EFD439EE2632DDD900B4DE14 /* YourNews.app */;
@@ -354,7 +355,7 @@
 			);
 			mainGroup = EFD439E52632DDD900B4DE14;
 			packageReferences = (
-				EF760D392632EEE9003E1000 /* XCRemoteSwiftPackageReference "Eureka" */,
+				EF760D392632EEE9003E1000 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = EFD439EF2632DDD900B4DE14 /* Products */;
 			projectDirPath = "";
@@ -380,6 +381,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		33256DD89E7094CF45C8A876 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YourNews/Pods-YourNews-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YourNews/Pods-YourNews-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YourNews/Pods-YourNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A66252635590D645EE54F65D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -662,7 +680,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EF760D392632EEE9003E1000 /* XCRemoteSwiftPackageReference "Eureka" */ = {
+		EF760D392632EEE9003E1000 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/xmartlabs/Eureka.git";
 			requirement = {
@@ -673,9 +691,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EF760D3A2632EEE9003E1000 /* Eureka */ = {
+		EF760D3A2632EEE9003E1000 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EF760D392632EEE9003E1000 /* XCRemoteSwiftPackageReference "Eureka" */;
+			package = EF760D392632EEE9003E1000 /* RemoteSwiftPackageReference */;
 			productName = Eureka;
 		};
 /* End XCSwiftPackageProductDependency section */
