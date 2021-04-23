@@ -21,6 +21,12 @@
 		EF760D652632F425003E1000 /* UIView+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D642632F425003E1000 /* UIView+Appearance.swift */; };
 		EF760D692632F52F003E1000 /* NavigationScrollBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D682632F52F003E1000 /* NavigationScrollBehavior.swift */; };
 		EF760D7C26330DD1003E1000 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D7B26330DD1003E1000 /* News.swift */; };
+		EF760D8026330ED8003E1000 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D7F26330ED8003E1000 /* NetworkManager.swift */; };
+		EF760D842633116F003E1000 /* NewsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D832633116F003E1000 /* NewsEndPoint.swift */; };
+		EF760D8A26331297003E1000 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D8926331297003E1000 /* APIError.swift */; };
+		EF760D8E263312B3003E1000 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D8D263312B3003E1000 /* Constants.swift */; };
+		EF760D912633134B003E1000 /* NewsStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D902633134B003E1000 /* NewsStoreProtocol.swift */; };
+		EF760D952633172F003E1000 /* NewsRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D942633172F003E1000 /* NewsRemote.swift */; };
 		EFD439F22632DDD900B4DE14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F12632DDD900B4DE14 /* AppDelegate.swift */; };
 		EFD439F62632DDD900B4DE14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F52632DDD900B4DE14 /* ViewController.swift */; };
 		EFD439FB2632DDDB00B4DE14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD439FA2632DDDB00B4DE14 /* Assets.xcassets */; };
@@ -71,6 +77,12 @@
 		EF760D642632F425003E1000 /* UIView+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Appearance.swift"; sourceTree = "<group>"; };
 		EF760D682632F52F003E1000 /* NavigationScrollBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationScrollBehavior.swift; sourceTree = "<group>"; };
 		EF760D7B26330DD1003E1000 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		EF760D7F26330ED8003E1000 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		EF760D832633116F003E1000 /* NewsEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEndPoint.swift; sourceTree = "<group>"; };
+		EF760D8926331297003E1000 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		EF760D8D263312B3003E1000 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EF760D902633134B003E1000 /* NewsStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStoreProtocol.swift; sourceTree = "<group>"; };
+		EF760D942633172F003E1000 /* NewsRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRemote.swift; sourceTree = "<group>"; };
 		EFD439EE2632DDD900B4DE14 /* YourNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD439F12632DDD900B4DE14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFD439F52632DDD900B4DE14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -180,9 +192,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		EF760D7E26330EC3003E1000 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EF760D7F26330ED8003E1000 /* NetworkManager.swift */,
+				EF760D832633116F003E1000 /* NewsEndPoint.swift */,
+				EF760D8926331297003E1000 /* APIError.swift */,
+				EF760D8D263312B3003E1000 /* Constants.swift */,
+				EF760D902633134B003E1000 /* NewsStoreProtocol.swift */,
+				EF760D942633172F003E1000 /* NewsRemote.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		EFD439E52632DDD900B4DE14 = {
 			isa = PBXGroup;
 			children = (
+				EF760D7E26330EC3003E1000 /* Network */,
 				EF760D7A26330DC5003E1000 /* Models */,
 				EF760D492632F0EB003E1000 /* Classes */,
 				EFD43A692632EBDB00B4DE14 /* Resources */,
@@ -458,14 +484,18 @@
 			files = (
 				EFD43A282632DF7400B4DE14 /* ButtonAction.swift in Sources */,
 				EFD43A1F2632DEBC00B4DE14 /* StretchyTableHeaderView.swift in Sources */,
+				EF760D952633172F003E1000 /* NewsRemote.swift in Sources */,
 				EFD43A272632DF7400B4DE14 /* ActionsFooterView.swift in Sources */,
 				EF760D522632F1DD003E1000 /* ProgressViewType.swift in Sources */,
 				EFD43A1B2632DE7400B4DE14 /* ObservationToken.swift in Sources */,
 				EFD43A532632E2CC00B4DE14 /* UIColor+ColorStudio.swift in Sources */,
+				EF760D842633116F003E1000 /* NewsEndPoint.swift in Sources */,
 				EFD43A162632DE7400B4DE14 /* PublishSubject.swift in Sources */,
+				EF760D8E263312B3003E1000 /* Constants.swift in Sources */,
 				EF760D472632EFAC003E1000 /* FormViewController.swift in Sources */,
 				EF760D652632F425003E1000 /* UIView+Appearance.swift in Sources */,
 				EFD43A512632E2CC00B4DE14 /* UIFont+App.swift in Sources */,
+				EF760D8026330ED8003E1000 /* NetworkManager.swift in Sources */,
 				EF760D4E2632F11A003E1000 /* State.swift in Sources */,
 				EFD43A192632DE7400B4DE14 /* Disposable.swift in Sources */,
 				EFD43A522632E2CC00B4DE14 /* Style.swift in Sources */,
@@ -487,6 +517,7 @@
 				EFD43A542632E2CC00B4DE14 /* UIColor+SystemColors.swift in Sources */,
 				EFD43A142632DE7400B4DE14 /* BehaviorSubject.swift in Sources */,
 				EFD439F22632DDD900B4DE14 /* AppDelegate.swift in Sources */,
+				EF760D912633134B003E1000 /* NewsStoreProtocol.swift in Sources */,
 				EF760D562632F289003E1000 /* UIViewController+ProgressViewable.swift in Sources */,
 				EF760D5C2632F31A003E1000 /* InProgressView.swift in Sources */,
 				EFD43A582632E42B00B4DE14 /* UISettings.swift in Sources */,
@@ -495,6 +526,7 @@
 				EFD43A2E2632DFE800B4DE14 /* UIViewController+Helpers.swift in Sources */,
 				EFD43A182632DE7400B4DE14 /* DisposeBag.swift in Sources */,
 				EFD43A6D2632EC8F00B4DE14 /* Assets.swift in Sources */,
+				EF760D8A26331297003E1000 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
