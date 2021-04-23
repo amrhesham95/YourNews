@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF760D3B2632EEE9003E1000 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = EF760D3A2632EEE9003E1000 /* SwiftPackageProductDependency */; };
+		EF760D3B2632EEE9003E1000 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = EF760D3A2632EEE9003E1000 /* Eureka */; };
 		EF760D402632EF4A003E1000 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D3F2632EF4A003E1000 /* OnboardingViewController.swift */; };
 		EF760D472632EFAC003E1000 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D462632EFAC003E1000 /* FormViewController.swift */; };
 		EF760D4B2632F0F6003E1000 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D4A2632F0F6003E1000 /* ViewModel.swift */; };
@@ -20,6 +20,7 @@
 		EF760D622632F3EF003E1000 /* UITableView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D612632F3EF003E1000 /* UITableView+Helpers.swift */; };
 		EF760D652632F425003E1000 /* UIView+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D642632F425003E1000 /* UIView+Appearance.swift */; };
 		EF760D692632F52F003E1000 /* NavigationScrollBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D682632F52F003E1000 /* NavigationScrollBehavior.swift */; };
+		EF760D7C26330DD1003E1000 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D7B26330DD1003E1000 /* News.swift */; };
 		EFD439F22632DDD900B4DE14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F12632DDD900B4DE14 /* AppDelegate.swift */; };
 		EFD439F62632DDD900B4DE14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F52632DDD900B4DE14 /* ViewController.swift */; };
 		EFD439FB2632DDDB00B4DE14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD439FA2632DDDB00B4DE14 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		EF760D612632F3EF003E1000 /* UITableView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helpers.swift"; sourceTree = "<group>"; };
 		EF760D642632F425003E1000 /* UIView+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Appearance.swift"; sourceTree = "<group>"; };
 		EF760D682632F52F003E1000 /* NavigationScrollBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationScrollBehavior.swift; sourceTree = "<group>"; };
+		EF760D7B26330DD1003E1000 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		EFD439EE2632DDD900B4DE14 /* YourNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD439F12632DDD900B4DE14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFD439F52632DDD900B4DE14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF8061525A20526EAE33A32D /* Pods_YourNews.framework in Frameworks */,
-				EF760D3B2632EEE9003E1000 /* BuildFile in Frameworks */,
+				EF760D3B2632EEE9003E1000 /* Eureka in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,9 +172,18 @@
 			path = InProgressView;
 			sourceTree = "<group>";
 		};
+		EF760D7A26330DC5003E1000 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EF760D7B26330DD1003E1000 /* News.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		EFD439E52632DDD900B4DE14 = {
 			isa = PBXGroup;
 			children = (
+				EF760D7A26330DC5003E1000 /* Models */,
 				EF760D492632F0EB003E1000 /* Classes */,
 				EFD43A692632EBDB00B4DE14 /* Resources */,
 				EF760D3D2632EF19003E1000 /* ViewRelated */,
@@ -325,7 +336,7 @@
 			);
 			name = YourNews;
 			packageProductDependencies = (
-				EF760D3A2632EEE9003E1000 /* SwiftPackageProductDependency */,
+				EF760D3A2632EEE9003E1000 /* Eureka */,
 			);
 			productName = YourNews;
 			productReference = EFD439EE2632DDD900B4DE14 /* YourNews.app */;
@@ -355,7 +366,7 @@
 			);
 			mainGroup = EFD439E52632DDD900B4DE14;
 			packageReferences = (
-				EF760D392632EEE9003E1000 /* RemoteSwiftPackageReference */,
+				EF760D392632EEE9003E1000 /* XCRemoteSwiftPackageReference "Eureka" */,
 			);
 			productRefGroup = EFD439EF2632DDD900B4DE14 /* Products */;
 			projectDirPath = "";
@@ -469,6 +480,7 @@
 				EFD43A152632DE7400B4DE14 /* Observer.swift in Sources */,
 				EFD43A4F2632E2CC00B4DE14 /* UIColor+SemanticColors.swift in Sources */,
 				EFD43A3A2632E0EE00B4DE14 /* UIButton+Helpers.swift in Sources */,
+				EF760D7C26330DD1003E1000 /* News.swift in Sources */,
 				EF760D5F2632F351003E1000 /* ProgressViewable.swift in Sources */,
 				EFD43A4E2632E2CC00B4DE14 /* UIFont+Helpers.swift in Sources */,
 				EF760D692632F52F003E1000 /* NavigationScrollBehavior.swift in Sources */,
@@ -680,7 +692,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EF760D392632EEE9003E1000 /* RemoteSwiftPackageReference */ = {
+		EF760D392632EEE9003E1000 /* XCRemoteSwiftPackageReference "Eureka" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/xmartlabs/Eureka.git";
 			requirement = {
@@ -691,9 +703,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EF760D3A2632EEE9003E1000 /* SwiftPackageProductDependency */ = {
+		EF760D3A2632EEE9003E1000 /* Eureka */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EF760D392632EEE9003E1000 /* RemoteSwiftPackageReference */;
+			package = EF760D392632EEE9003E1000 /* XCRemoteSwiftPackageReference "Eureka" */;
 			productName = Eureka;
 		};
 /* End XCSwiftPackageProductDependency section */
