@@ -1,5 +1,5 @@
 //
-//  NewsRepoProtocol.swift
+//  NewsStoreProtocol.swift
 //  YourNews
 //
 //  Created by Amr Hesham on 23/04/2021.
@@ -8,15 +8,15 @@
 import Foundation
 
 // MARK: - Typealias
-typealias RemoteNewsCompletionHandler = (NewsResponse?, APIError?) -> Void
+typealias StoreNewsCompletionHandler = (Result<NewsResponse, Error>) -> Void
 
-// MARK: - NewsRepoProtocol
+// MARK: - NewsStoreProtocol
 //
-protocol NewsRemoteProtocol {
+protocol NewsStoreProtocol {
   
-  var network: Networkable? {get set}
+  var remote: NewsRemoteProtocol? {get set}
   
-  /// Fetch headlines 
+  /// Fetch headlines
   ///
-  func getHeadlines(country: String, category: String, pageSize: Int, page: Int, complitionHandler:  @escaping RemoteNewsCompletionHandler)
+  func getHeadlines(country: String, category: String, pageSize: Int, page: Int, complitionHandler:  @escaping StoreNewsCompletionHandler)
 }
