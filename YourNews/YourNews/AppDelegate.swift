@@ -10,7 +10,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
-  // MARK: - properties
+  // MARK: - Properties
   
   /// AppDelegate's Instance
   ///
@@ -27,8 +27,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    
+    setupMainWindow()
     return true
+  }
+}
+
+// MARK: - Initialization Methods
+//
+private extension AppDelegate {
+  
+  /// Sets up the main UIWindow instance.
+  ///
+  func setupMainWindow() {
+    let window = UIWindow()
+    window.makeKeyAndVisible()
+    window.rootViewController = OnboardingViewController()
+    self.window = window
   }
 }
 

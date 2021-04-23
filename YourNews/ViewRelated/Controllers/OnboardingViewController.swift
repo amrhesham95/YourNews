@@ -8,3 +8,28 @@
 import Foundation
 import Eureka
 
+// MARK: - OnboardingViewController
+//
+class OnboardingViewController: FormViewController {
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    createRows()
+  }
+  
+}
+
+// MARK: - Rows Creations
+//
+extension OnboardingViewController {
+  func createRows() {
+//    configureFooterView()
+    form +++ Section()
+      <<< PushRow<String>() { row in
+        row.title = "Countries"
+        row.options = ["Egypt", "KSA", "UAE"]
+      }
+  }
+  
+}
+
