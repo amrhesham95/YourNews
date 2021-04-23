@@ -15,9 +15,9 @@ class OnboardingViewController: FormViewController {
     super.viewDidLoad()
     
     configureFooterView()
+    configureHeaderView()
     createRows()
   }
-  
 }
 
 // MARK: - Rows Creations
@@ -38,13 +38,24 @@ extension OnboardingViewController {
         row.options = ["Category1", "Category2", "Category3"]
       }
   }
+}
+
+// MARK: - OnboardingViewController
+//
+extension OnboardingViewController {
   
   /// Configure footer view
   ///
   func configureFooterView() {
-    footerView.addAction(ButtonAction(title: "Submit", style: .default) { [weak self] _ in
+    footerView.addAction(ButtonAction(title: "Submit", style: .default) { _ in
       print("Submit button was tapped")
     })
+  }
+  
+  /// Configure header view
+  ///
+  func configureHeaderView() {
+    headerView.imageView.image = Asset.placeholderImageIcon.image
   }
 }
 
