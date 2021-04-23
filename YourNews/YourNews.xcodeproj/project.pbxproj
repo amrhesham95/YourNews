@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		EF760D3B2632EEE9003E1000 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = EF760D3A2632EEE9003E1000 /* Eureka */; };
+		EF760D402632EF4A003E1000 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D3F2632EF4A003E1000 /* OnboardingViewController.swift */; };
+		EF760D472632EFAC003E1000 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D462632EFAC003E1000 /* FormViewController.swift */; };
+		EF760D4B2632F0F6003E1000 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D4A2632F0F6003E1000 /* ViewModel.swift */; };
+		EF760D4E2632F11A003E1000 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D4D2632F11A003E1000 /* State.swift */; };
 		EFD439F22632DDD900B4DE14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F12632DDD900B4DE14 /* AppDelegate.swift */; };
 		EFD439F62632DDD900B4DE14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F52632DDD900B4DE14 /* ViewController.swift */; };
 		EFD439FB2632DDDB00B4DE14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD439FA2632DDDB00B4DE14 /* Assets.xcassets */; };
@@ -45,6 +49,10 @@
 		47AB730649F83F0572DFB582 /* Pods-YourNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourNews.release.xcconfig"; path = "Target Support Files/Pods-YourNews/Pods-YourNews.release.xcconfig"; sourceTree = "<group>"; };
 		4C021046198EA080A27B1140 /* Pods_YourNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YourNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D039CC77BAE652A8666913 /* Pods-YourNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourNews.debug.xcconfig"; path = "Target Support Files/Pods-YourNews/Pods-YourNews.debug.xcconfig"; sourceTree = "<group>"; };
+		EF760D3F2632EF4A003E1000 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		EF760D462632EFAC003E1000 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		EF760D4A2632F0F6003E1000 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		EF760D4D2632F11A003E1000 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		EFD439EE2632DDD900B4DE14 /* YourNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD439F12632DDD900B4DE14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFD439F52632DDD900B4DE14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,13 +108,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EF760D3D2632EF19003E1000 /* ViewRelated */ = {
+			isa = PBXGroup;
+			children = (
+				EF760D3E2632EF37003E1000 /* Controllers */,
+				EFD43A1D2632DEB100B4DE14 /* ReusableViews */,
+				EFD43A462632E2CC00B4DE14 /* Styles */,
+				EFD43A2C2632DFDB00B4DE14 /* Extensions */,
+			);
+			path = ViewRelated;
+			sourceTree = "<group>";
+		};
+		EF760D3E2632EF37003E1000 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF760D3F2632EF4A003E1000 /* OnboardingViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EF760D492632F0EB003E1000 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EF760D502632F134003E1000 /* BaseViewModel */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EF760D502632F134003E1000 /* BaseViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF760D4A2632F0F6003E1000 /* ViewModel.swift */,
+				EF760D4D2632F11A003E1000 /* State.swift */,
+			);
+			path = BaseViewModel;
+			sourceTree = "<group>";
+		};
 		EFD439E52632DDD900B4DE14 = {
 			isa = PBXGroup;
 			children = (
+				EF760D492632F0EB003E1000 /* Classes */,
 				EFD43A692632EBDB00B4DE14 /* Resources */,
-				EFD43A462632E2CC00B4DE14 /* Styles */,
-				EFD43A2C2632DFDB00B4DE14 /* Extensions */,
-				EFD43A1D2632DEB100B4DE14 /* ReusableViews */,
+				EF760D3D2632EF19003E1000 /* ViewRelated */,
 				EFD43A092632DE5F00B4DE14 /* Tools */,
 				EFD439F02632DDD900B4DE14 /* YourNews */,
 				EFD439EF2632DDD900B4DE14 /* Products */,
@@ -170,6 +213,7 @@
 			children = (
 				EFD43A222632DF7400B4DE14 /* ActionsFooterView */,
 				EFD43A1E2632DEBC00B4DE14 /* StretchyTableHeaderView.swift */,
+				EF760D462632EFAC003E1000 /* FormViewController.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -356,11 +400,15 @@
 				EFD43A1B2632DE7400B4DE14 /* ObservationToken.swift in Sources */,
 				EFD43A532632E2CC00B4DE14 /* UIColor+ColorStudio.swift in Sources */,
 				EFD43A162632DE7400B4DE14 /* PublishSubject.swift in Sources */,
+				EF760D472632EFAC003E1000 /* FormViewController.swift in Sources */,
 				EFD43A512632E2CC00B4DE14 /* UIFont+App.swift in Sources */,
+				EF760D4E2632F11A003E1000 /* State.swift in Sources */,
 				EFD43A192632DE7400B4DE14 /* Disposable.swift in Sources */,
 				EFD43A522632E2CC00B4DE14 /* Style.swift in Sources */,
+				EF760D4B2632F0F6003E1000 /* ViewModel.swift in Sources */,
 				EFD439F62632DDD900B4DE14 /* ViewController.swift in Sources */,
 				EFD43A312632E03100B4DE14 /* NSObject+Helpers.swift in Sources */,
+				EF760D402632EF4A003E1000 /* OnboardingViewController.swift in Sources */,
 				EFD43A172632DE7400B4DE14 /* DisposeBase.swift in Sources */,
 				EFD43A372632E0B700B4DE14 /* UIView+Helpers.swift in Sources */,
 				EFD43A292632DF7400B4DE14 /* LoadingButton.swift in Sources */,
