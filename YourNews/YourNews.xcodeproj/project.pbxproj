@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		EF69A6472633575D00CF9535 /* EmptyStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69A6452633575D00CF9535 /* EmptyStateViewController.swift */; };
 		EF69A6482633575D00CF9535 /* EmptyStateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF69A6462633575D00CF9535 /* EmptyStateViewController.xib */; };
+		EF69A64F263357E000CF9535 /* KeyboardFrameObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69A64B263357E000CF9535 /* KeyboardFrameObserver.swift */; };
+		EF69A650263357E000CF9535 /* KeyboardScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69A64C263357E000CF9535 /* KeyboardScrollable.swift */; };
+		EF69A651263357E000CF9535 /* KeyboardStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69A64D263357E000CF9535 /* KeyboardStateProvider.swift */; };
+		EF69A652263357E000CF9535 /* KeyboardFrameAdjustmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69A64E263357E000CF9535 /* KeyboardFrameAdjustmentProvider.swift */; };
+		EF69A6552633580100CF9535 /* WebviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69A6542633580100CF9535 /* WebviewHelper.swift */; };
 		EF760D3B2632EEE9003E1000 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = EF760D3A2632EEE9003E1000 /* Eureka */; };
 		EF760D402632EF4A003E1000 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D3F2632EF4A003E1000 /* OnboardingViewController.swift */; };
 		EF760D472632EFAC003E1000 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D462632EFAC003E1000 /* FormViewController.swift */; };
@@ -70,6 +75,11 @@
 		96D039CC77BAE652A8666913 /* Pods-YourNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourNews.debug.xcconfig"; path = "Target Support Files/Pods-YourNews/Pods-YourNews.debug.xcconfig"; sourceTree = "<group>"; };
 		EF69A6452633575D00CF9535 /* EmptyStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateViewController.swift; sourceTree = "<group>"; };
 		EF69A6462633575D00CF9535 /* EmptyStateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyStateViewController.xib; sourceTree = "<group>"; };
+		EF69A64B263357E000CF9535 /* KeyboardFrameObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardFrameObserver.swift; sourceTree = "<group>"; };
+		EF69A64C263357E000CF9535 /* KeyboardScrollable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardScrollable.swift; sourceTree = "<group>"; };
+		EF69A64D263357E000CF9535 /* KeyboardStateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardStateProvider.swift; sourceTree = "<group>"; };
+		EF69A64E263357E000CF9535 /* KeyboardFrameAdjustmentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardFrameAdjustmentProvider.swift; sourceTree = "<group>"; };
+		EF69A6542633580100CF9535 /* WebviewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebviewHelper.swift; sourceTree = "<group>"; };
 		EF760D3F2632EF4A003E1000 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		EF760D462632EFAC003E1000 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		EF760D4A2632F0F6003E1000 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -153,6 +163,17 @@
 				EF69A6462633575D00CF9535 /* EmptyStateViewController.xib */,
 			);
 			path = EmptyViewController;
+			sourceTree = "<group>";
+		};
+		EF69A64A263357E000CF9535 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				EF69A64B263357E000CF9535 /* KeyboardFrameObserver.swift */,
+				EF69A64C263357E000CF9535 /* KeyboardScrollable.swift */,
+				EF69A64D263357E000CF9535 /* KeyboardStateProvider.swift */,
+				EF69A64E263357E000CF9535 /* KeyboardFrameAdjustmentProvider.swift */,
+			);
+			path = Keyboard;
 			sourceTree = "<group>";
 		};
 		EF760D3D2632EF19003E1000 /* ViewRelated */ = {
@@ -262,6 +283,7 @@
 		EFD43A092632DE5F00B4DE14 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EF69A6542633580100CF9535 /* WebviewHelper.swift */,
 				EFD43A0A2632DE7400B4DE14 /* Observables */,
 				EF760D682632F52F003E1000 /* NavigationScrollBehavior.swift */,
 			);
@@ -294,6 +316,7 @@
 		EFD43A1D2632DEB100B4DE14 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				EF69A64A263357E000CF9535 /* Keyboard */,
 				EF69A644263356C000CF9535 /* EmptyViewController */,
 				EF760D582632F2DB003E1000 /* InProgressView */,
 				EFD43A222632DF7400B4DE14 /* ActionsFooterView */,
@@ -513,10 +536,13 @@
 				EF760D842633116F003E1000 /* NewsEndPoint.swift in Sources */,
 				EFD43A162632DE7400B4DE14 /* PublishSubject.swift in Sources */,
 				EF760D8E263312B3003E1000 /* Constants.swift in Sources */,
+				EF69A64F263357E000CF9535 /* KeyboardFrameObserver.swift in Sources */,
 				EF760D472632EFAC003E1000 /* FormViewController.swift in Sources */,
 				EF760D652632F425003E1000 /* UIView+Appearance.swift in Sources */,
 				EFD43A512632E2CC00B4DE14 /* UIFont+App.swift in Sources */,
+				EF69A652263357E000CF9535 /* KeyboardFrameAdjustmentProvider.swift in Sources */,
 				EF760D8026330ED8003E1000 /* NetworkManager.swift in Sources */,
+				EF69A6552633580100CF9535 /* WebviewHelper.swift in Sources */,
 				EF760D4E2632F11A003E1000 /* State.swift in Sources */,
 				EFD43A192632DE7400B4DE14 /* Disposable.swift in Sources */,
 				EFD43A522632E2CC00B4DE14 /* Style.swift in Sources */,
@@ -530,6 +556,7 @@
 				EFD43A292632DF7400B4DE14 /* LoadingButton.swift in Sources */,
 				EFD43A1A2632DE7400B4DE14 /* Observable.swift in Sources */,
 				EFD43A152632DE7400B4DE14 /* Observer.swift in Sources */,
+				EF69A651263357E000CF9535 /* KeyboardStateProvider.swift in Sources */,
 				EFD43A4F2632E2CC00B4DE14 /* UIColor+SemanticColors.swift in Sources */,
 				EFD43A3A2632E0EE00B4DE14 /* UIButton+Helpers.swift in Sources */,
 				EF760D7C26330DD1003E1000 /* News.swift in Sources */,
@@ -551,6 +578,7 @@
 				EFD43A182632DE7400B4DE14 /* DisposeBag.swift in Sources */,
 				EFD43A6D2632EC8F00B4DE14 /* Assets.swift in Sources */,
 				EF760D8A26331297003E1000 /* APIError.swift in Sources */,
+				EF69A650263357E000CF9535 /* KeyboardScrollable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
