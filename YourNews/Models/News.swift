@@ -35,3 +35,16 @@ public struct SourceNews: Codable {
     let id: String?
     let name: String?
 }
+
+// MARK: - News + ReadOnlyConvertible
+//
+extension News: ReadOnlyConvertible {
+  public typealias ReadOnlyType = News
+  
+  public func toReadOnly() -> News {
+    return self
+  }
+  public func toTypeErasedReadOnly() -> Any {
+    return self
+  }
+}
