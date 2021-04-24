@@ -65,6 +65,8 @@ where Cell.SearchModel == Command.CellViewModel {
     return searchBar.text ?? String()
   }
   
+  private(set) var onFilterTapped: (() -> Void)?
+  
   /// UI Active State/Users/mohamedkorany/Desktop/CFC/Classes/Tools/SyncCoordinator.swift
   ///
   private var state: State = .notInitialized {
@@ -134,9 +136,8 @@ where Cell.SearchModel == Command.CellViewModel {
     transitionToResultsUpdatedState()
     configureScrollWatcher()
     configurePaginationTracker()
-    searchUICommand.synchronizeModels(keyword: "", pageNumber: 0, pageSize: 25, isSearchMode: true) { _ in
-      
-    }
+    configureCommandFilterChanges()
+    syncingCoordinator.synchronizeFirstPage(isSearchMode: true)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -229,14 +230,26 @@ where Cell.SearchModel == Command.CellViewModel {
   //
   
   @IBAction func dismissWasPressed() {
-    view.endEditing(true)
-    dismiss(animated: true, completion: nil)
+//    view.endEditing(true)
+//    dismiss(animated: true, completion: nil)
+    onFilterTapped?()
   }
   
   override func viewSafeAreaInsetsDidChange() {
     super.viewSafeAreaInsetsDidChange()
     
     applyAdditionalKeyboardFrameHeightTo(children)
+  }
+}
+
+// MARK: - Public Handler
+//
+extension SearchViewController {
+  
+  /// Setup on filter button tap action
+  ///
+  func configureOnFilterTapped(completion: @escaping () -> Void) {
+    self.onFilterTapped = completion
   }
 }
 
@@ -254,6 +267,20 @@ private extension SearchViewController {
       $0 as? KeyboardFrameAdjustmentProvider
     }.forEach {
       $0.additionalKeyboardFrameHeight = 0 - view.safeAreaInsets.bottom
+    }
+  }
+}
+
+private extension SearchViewController {
+  
+  /// Configure onFilter change closue on searchUICommand
+  ///
+  func configureCommandFilterChanges() {
+    
+    if let command = searchUICommand as? NewsSearchCommand {
+      command.onFilterChange = { [weak self] in
+        self?.syncingCoordinator.synchronizeFirstPage(isSearchMode: true)
+      }
     }
   }
 }
