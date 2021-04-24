@@ -46,8 +46,8 @@ extension NewsAPI: TargetType {
     
     
     case .topheadlines(let request, let searchWord):
-      return [Constants.API_country: (request.newsFilter.country) ?? "",
-              Constants.API_category: request.newsFilter.categories?.first ?? "",
+      return [Constants.API_country: request.newsFilter.country,
+              Constants.API_category: request.newsFilter.categories.first ?? "",
               Constants.API_searchWord: searchWord,
               Constants.API_key: Constants.API_Key_Value,
               Constants.API_pageSize: request.pageSize,
@@ -61,8 +61,8 @@ extension NewsAPI: TargetType {
     switch self {
     
     case .topheadlines(let request, let searchWord):
-      return .requestParameters(parameters: [Constants.API_country: request.newsFilter.country ?? "",
-                                             Constants.API_category: request.newsFilter.categories?.first ?? "",
+      return .requestParameters(parameters: [Constants.API_country: request.newsFilter.country,
+                                             Constants.API_category: request.newsFilter.categories.first ?? "",
                                              Constants.API_searchWord: searchWord,
                                              Constants.API_key: Constants.API_Key_Value,
                                              Constants.API_pageSize: request.pageSize,

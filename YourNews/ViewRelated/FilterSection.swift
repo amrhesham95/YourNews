@@ -58,9 +58,10 @@ class FilterSection: Section {
     return CountriesPushRow { row in
       row.title = Strings.countries
       row.value = value.country
-      row.options = ["Egypt", "USA", "KSA"]
+      row.options = ["ae", "ar", "at"]
     }.onChange { [weak self] in
-      self?.value.country = $0.value
+      guard let value = $0.value else { return }
+      self?.value.country = value
     }
   }()
   
@@ -70,9 +71,10 @@ class FilterSection: Section {
     return CategoriesPushRow { row in
       row.title = Strings.countries
       row.value = value.categories
-      row.options = ["Category1", "Category2"]
+      row.options = ["business", "entertainment", "general"] 
     }.onChange { [weak self] in
-      self?.value.categories = $0.value
+      guard let value = $0.value else { return }
+      self?.value.categories = value
     }
   }()
 }

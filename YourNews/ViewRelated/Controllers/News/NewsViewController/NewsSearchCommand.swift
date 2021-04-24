@@ -31,7 +31,7 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   }()
   
   private(set) var newsStore: NewsStoreProtocol
-  private(set) var newsFilter: NewsFilter = ServiceLocator.defaultFilter {
+  private(set) var newsFilter: NewsFilter? = ServiceLocator.defaultFilter {
     didSet {
       onFilterChange?()
     }
@@ -67,7 +67,7 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   ///
   func synchronizeModels(keyword: String, pageNumber: Int, pageSize: Int, isSearchMode: Bool, onCompletion: ((Bool) -> Void)?) {
     resetIfNeeded(pageNumber, isSearchMode: isSearchMode)
-    let request = makeRequest(pageNumber: pageNumber, pageSize: pageSize)
+    guard let request = makeRequest(pageNumber: pageNumber, pageSize: pageSize) else { return }
     newsStore.getHeadlines(request: request, searchWord: keyword) { [weak self] result in
       switch result {
       case .success(let response):
@@ -115,7 +115,8 @@ private extension NewsSearchCommand {
   ///   - pageNumber: Current page number
   ///   - pageSize: Current page size
   /// - Returns: Valid request as `NewsSearchRequest`
-  private func makeRequest(pageNumber: Int, pageSize: Int) -> NewsSearchRequest {
+  private func makeRequest(pageNumber: Int, pageSize: Int) -> NewsSearchRequest? {
+    guard let newsFilter = newsFilter else { return nil }
     return NewsSearchRequest(newsFilter: newsFilter, pageNumber: pageNumber, pageSize: pageSize)
   }
 }

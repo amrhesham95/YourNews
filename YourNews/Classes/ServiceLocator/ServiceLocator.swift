@@ -47,8 +47,8 @@ final class ServiceLocator {
   }
   
   /// Provides the access point to the default Filter
-  static var defaultFilter: NewsFilter {
-    return _defaultFilter ?? NewsFilter()
+  static var defaultFilter: NewsFilter? {
+    return _defaultFilter
   }
 }
 
