@@ -28,10 +28,14 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
     return ResultsController<Model>()
   }()
   
+  private(set) var newsStore: NewsStoreProtocol
+  private(set) var newsFilter: NewsFilter = NewsFilter(country: "", category: "")
+  
   // MARK: Init
   
-  init(onSelectSearchResult: ((News) -> Void)?) {
+  init(newsStore:  NewsStoreProtocol = NewsStore(remote: NewsRemote(network: NetworkManager())), onSelectSearchResult: ((News) -> Void)?) {
     self.onSelectSearchResult = onSelectSearchResult
+    self.newsStore = newsStore
   }
   
   // MARK: Handlers
@@ -49,24 +53,25 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
       let message = NSAttributedString(string: format)
 
     DispatchQueue.main.async {
-      viewController.configure(.simple(message: message, image: UIImage(named: "empty")!))
+      viewController.configure(.simple(message: message, image: Asset.placeholderImageIcon.image))
     }
   }
   
   /// Synchronizes the departments matching a given Keyword
   ///
-  func synchronizeModels(keyword: String, pageNumber: Int, pageSize: Int, onCompletion: ((Bool) -> Void)?) {
-    resetIfNeeded(pageNumber)
-//    let data = DummyData()
-//    guard let list: [News] = data.getData(with: keyword) else {
-//       self.resultsController.insert([])
-//      onCompletion?(false)
-//      return
-//    }
-//    self.resultsController.insert(list)
-//    onCompletion?(true)
-
-
+  func synchronizeModels(keyword: String, pageNumber: Int, pageSize: Int, isSearchMode: Bool, onCompletion: ((Bool) -> Void)?) {
+    resetIfNeeded(pageNumber, isSearchMode: isSearchMode)
+    newsStore.getHeadlines(country: "za", category: "business", pageSize: pageSize, page: pageNumber) { [weak self] result in
+      switch result {
+      case .success(let response):
+        let articles = response.articles ?? []
+        self?.resultsController.insert(articles)
+        onCompletion?(articles.count == pageSize)
+        
+      case .failure:
+        onCompletion?(false)
+      }
+    }
   }
   
   func didSelectSearchResult(model: Model, from viewController: UIViewController, reloadData: () -> Void, updateActionButton: () -> Void) {
@@ -80,8 +85,8 @@ private extension NewsSearchCommand {
   
   /// Reset results controller
   ///
-  private func resetIfNeeded(_ pageNumber: Int) {
-    if pageNumber == .zero {
+  private func resetIfNeeded(_ pageNumber: Int, isSearchMode: Bool) {
+    if pageNumber == .zero || isSearchMode {
       resultsController.reset()
     }
   }
