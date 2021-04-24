@@ -15,7 +15,7 @@ public struct NewsResponse: Codable {
 
 // MARK: - Article
 public struct News: Codable {
-    let source: SourceNews?
+    let newsSource: SourceNews?
     let author: String?
     let title, articleDescription: String?
     let url: String?
@@ -24,8 +24,9 @@ public struct News: Codable {
     let content: String?
 
     enum CodingKeys: String, CodingKey {
-        case source, author, title
+        case author, title
         case articleDescription = "description"
+        case newsSource = "source"
         case url, urlToImage, publishedAt, content
     }
 }

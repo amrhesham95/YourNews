@@ -29,7 +29,7 @@ class NewsViewController: UIViewController {
   lazy var searchViewController: SearchViewController = {
     return SearchViewController(
       command: newsSearchCommand,
-      cellType: BasicTableViewCell.self,
+      cellType: NewsCell.self,
       cellSeparator: .singleLine
     )
   }()
@@ -84,22 +84,3 @@ extension NewsViewController: NewsFilterDelegate {
     newsSearchCommand.updateFilter(with: result)
   }
 }
-
-//MARK: - UITableViewCell+SearchResultCell
-
-extension BasicTableViewCell: SearchResultCell {
-  
-  typealias SearchModel = News
-  
-  static func register(for tableView: UITableView) {
-    tableView.register(self, forCellReuseIdentifier: self.classNameWithoutNamespaces)
-  }
-  
-  func configureCell(searchModel: SearchModel) {
-    textLabel?.text = searchModel.title
-    detailTextLabel?.text = searchModel.author
-  }
-}
-//
-class BasicTableViewCell: UITableViewCell {}
-

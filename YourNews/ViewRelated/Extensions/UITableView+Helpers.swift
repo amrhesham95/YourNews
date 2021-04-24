@@ -36,4 +36,13 @@ extension UITableView {
       }
       return cell
   }
+  
+  
+  
+  /// Registers a `UITableViewCell` nib  using its `reuseIdentifier` property as the reuse identifier.
+  ///
+  func registerNib(for type: UITableViewCell.Type) {
+      register(type.loadNib(), forCellReuseIdentifier: type.classNameWithoutNamespaces)
+  }
+
 }

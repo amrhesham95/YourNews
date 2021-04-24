@@ -53,6 +53,11 @@
 		EF760D9926334F0F003E1000 /* NewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D9826334F0F003E1000 /* NewsStore.swift */; };
 		EF760D9C26334F2B003E1000 /* NewsStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D9B26334F2B003E1000 /* NewsStoreProtocol.swift */; };
 		EF941BCE26346C110087F603 /* NewsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF941BCD26346C110087F603 /* NewsSearchRequest.swift */; };
+		EF941BD426346E1A0087F603 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF941BD026346E190087F603 /* NewsCell.xib */; };
+		EF941BD526346E1A0087F603 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF941BD126346E1A0087F603 /* NewsCell.swift */; };
+		EF941BD726346E1A0087F603 /* BaseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF941BD326346E1A0087F603 /* BaseCardView.swift */; };
+		EF941BE1263472A20087F603 /* NewsCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF941BE0263472A20087F603 /* NewsCellRepresentable.swift */; };
+		EF941BE72634A54A0087F603 /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF941BE62634A54A0087F603 /* UIImageView+ImageLoader.swift */; };
 		EFD439F22632DDD900B4DE14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F12632DDD900B4DE14 /* AppDelegate.swift */; };
 		EFD439F62632DDD900B4DE14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F52632DDD900B4DE14 /* ViewController.swift */; };
 		EFD439FB2632DDDB00B4DE14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD439FA2632DDDB00B4DE14 /* Assets.xcassets */; };
@@ -135,6 +140,11 @@
 		EF760D9826334F0F003E1000 /* NewsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStore.swift; sourceTree = "<group>"; };
 		EF760D9B26334F2B003E1000 /* NewsStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStoreProtocol.swift; sourceTree = "<group>"; };
 		EF941BCD26346C110087F603 /* NewsSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSearchRequest.swift; sourceTree = "<group>"; };
+		EF941BD026346E190087F603 /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
+		EF941BD126346E1A0087F603 /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		EF941BD326346E1A0087F603 /* BaseCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCardView.swift; sourceTree = "<group>"; };
+		EF941BE0263472A20087F603 /* NewsCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellRepresentable.swift; sourceTree = "<group>"; };
+		EF941BE62634A54A0087F603 /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
 		EFD439EE2632DDD900B4DE14 /* YourNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD439F12632DDD900B4DE14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFD439F52632DDD900B4DE14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +212,10 @@
 		EF4DA85226343CFC006A070B /* NewsCell */ = {
 			isa = PBXGroup;
 			children = (
+				EF941BD326346E1A0087F603 /* BaseCardView.swift */,
+				EF941BD126346E1A0087F603 /* NewsCell.swift */,
+				EF941BD026346E190087F603 /* NewsCell.xib */,
+				EF941BE0263472A20087F603 /* NewsCellRepresentable.swift */,
 			);
 			path = NewsCell;
 			sourceTree = "<group>";
@@ -447,6 +461,7 @@
 				EFD43A392632E0EE00B4DE14 /* UIButton+Helpers.swift */,
 				EF760D612632F3EF003E1000 /* UITableView+Helpers.swift */,
 				EF760D642632F425003E1000 /* UIView+Appearance.swift */,
+				EF941BE62634A54A0087F603 /* UIImageView+ImageLoader.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -552,6 +567,7 @@
 			files = (
 				EF69A6482633575D00CF9535 /* EmptyStateViewController.xib in Resources */,
 				EFD439FE2632DDDB00B4DE14 /* LaunchScreen.storyboard in Resources */,
+				EF941BD426346E1A0087F603 /* NewsCell.xib in Resources */,
 				EF69A66826335A5700CF9535 /* SearchViewController.xib in Resources */,
 				EFD43A2A2632DF7400B4DE14 /* ActionsFooterView.xib in Resources */,
 				EF760D5B2632F31A003E1000 /* InProgressView.xib in Resources */,
@@ -639,6 +655,7 @@
 				EF69A66626335A5700CF9535 /* SearchResultCell.swift in Sources */,
 				EF69A64F263357E000CF9535 /* KeyboardFrameObserver.swift in Sources */,
 				EF760D472632EFAC003E1000 /* FormViewController.swift in Sources */,
+				EF941BD726346E1A0087F603 /* BaseCardView.swift in Sources */,
 				EF4DA85C263449DE006A070B /* NewsFilterDelegate.swift in Sources */,
 				EF69A66526335A5700CF9535 /* ResultController.swift in Sources */,
 				EF760D652632F425003E1000 /* UIView+Appearance.swift in Sources */,
@@ -650,6 +667,7 @@
 				EF69A66B26335A5700CF9535 /* ReadOnlyConvertible.swift in Sources */,
 				EF760D4E2632F11A003E1000 /* State.swift in Sources */,
 				EF941BCE26346C110087F603 /* NewsSearchRequest.swift in Sources */,
+				EF941BD526346E1A0087F603 /* NewsCell.swift in Sources */,
 				EFD43A192632DE7400B4DE14 /* Disposable.swift in Sources */,
 				EF4DA85426343F87006A070B /* FilterSection.swift in Sources */,
 				EFD43A522632E2CC00B4DE14 /* Style.swift in Sources */,
@@ -663,6 +681,7 @@
 				EFD43A292632DF7400B4DE14 /* LoadingButton.swift in Sources */,
 				EFD43A1A2632DE7400B4DE14 /* Observable.swift in Sources */,
 				EF69A67526335DB000CF9535 /* NewsSearchCommand.swift in Sources */,
+				EF941BE1263472A20087F603 /* NewsCellRepresentable.swift in Sources */,
 				EFD43A152632DE7400B4DE14 /* Observer.swift in Sources */,
 				EF69A651263357E000CF9535 /* KeyboardStateProvider.swift in Sources */,
 				EFD43A4F2632E2CC00B4DE14 /* UIColor+SemanticColors.swift in Sources */,
@@ -686,6 +705,7 @@
 				EFD43A582632E42B00B4DE14 /* UISettings.swift in Sources */,
 				EF760D622632F3EF003E1000 /* UITableView+Helpers.swift in Sources */,
 				EFD43A502632E2CC00B4DE14 /* ColorStudio.swift in Sources */,
+				EF941BE72634A54A0087F603 /* UIImageView+ImageLoader.swift in Sources */,
 				EF4DA84F263436A5006A070B /* ScrollWatcher.swift in Sources */,
 				EF69A66326335A5700CF9535 /* SyncingCoordinator.swift in Sources */,
 				EFD43A2E2632DFE800B4DE14 /* UIViewController+Helpers.swift in Sources */,
