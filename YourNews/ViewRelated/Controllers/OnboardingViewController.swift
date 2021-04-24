@@ -27,16 +27,7 @@ extension OnboardingViewController {
   /// Creating inputs rows of OnboardingViewController
   ///
   func createRows() {
-    form +++ Section()
-      <<< PushRow<String>() { row in
-        row.title = "Countries"
-        row.options = ["Egypt", "KSA", "UAE"]
-      }
-    
-      <<< MultipleSelectorRow<String>() { row in
-        row.title = "Categories"
-        row.options = ["Category1", "Category2", "Category3"]
-      }
+    form +++ FilterSection(initialValue: nil)
   }
 }
 
