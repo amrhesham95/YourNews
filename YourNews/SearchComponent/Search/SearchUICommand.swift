@@ -16,7 +16,7 @@ protocol SearchUICommand: NSObject {
   
   /// Init with action on select search result callback
   ///
-  init(onSelectSearchResult: ((Model) -> Void)?)
+  init(newsStore:  NewsStoreProtocol, onSelectSearchResult: ((Model) -> Void)?)
 
   /// The controller of the view to show if there is no text entered in the search bar.
   ///
@@ -71,6 +71,7 @@ protocol SearchUICommand: NSObject {
   func synchronizeModels(keyword: String,
                          pageNumber: Int,
                          pageSize: Int,
+                         isSearchMode: Bool,
                          onCompletion: ((Bool) -> Void)?)
   
   /// Called when user selects a search result.
