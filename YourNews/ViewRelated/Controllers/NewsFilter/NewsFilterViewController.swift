@@ -16,7 +16,19 @@ class NewsFilterViewController: FormViewController {
   /// Delegate when finish filtering
   ///
   weak var delegate: NewsFilterDelegate?
-
+  
+  lazy var filterSection = FilterSection(initialValue: nil)
+  
+  // MARK: - Init
+  init(delegate: NewsFilterDelegate) {
+    self.delegate = delegate
+    super.init()
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
   // MARK: - Life cycle
   
   override func viewDidLoad() {
@@ -35,7 +47,7 @@ extension NewsFilterViewController {
   /// Creating inputs rows of OnboardingViewController
   ///
   func createRows() {
-    form +++ FilterSection(initialValue: nil)
+    form +++ filterSection
   }
 }
 
@@ -46,8 +58,9 @@ extension NewsFilterViewController {
   /// Configure footer view
   ///
   func configureFooterView() {
-    footerView.addAction(ButtonAction(title: "Submit", style: .default) { _ in
-      print("Submit button was tapped")
+    footerView.addAction(ButtonAction(title: "Submit", style: .default) { [weak self] in
+      guard let self = self else { return }
+      self.delegate?.newsFilter(viewController: self, didTappedSearch: $0.button, with: self.filterSection.value)
     })
   }
   
