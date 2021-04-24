@@ -41,8 +41,6 @@ extension UIViewController {
     viewController.view.addAndFixInView(parentView)
     viewController.didMove(toParent: self)
   }
-  
-  
 }
 
 /// Private methods

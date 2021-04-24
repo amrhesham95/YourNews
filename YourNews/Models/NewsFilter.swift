@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+// MARK: - NewsFilter
+//
+struct NewsFilter {
+  let country: String?
+  let category: String?
+}

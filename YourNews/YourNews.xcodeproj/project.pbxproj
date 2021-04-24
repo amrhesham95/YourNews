@@ -182,6 +182,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EF4DA85126343CF5006A070B /* NewsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EF69A67026335D2F00CF9535 /* NewsViewController.swift */,
+				EF69A67426335DB000CF9535 /* NewsSearchCommand.swift */,
+			);
+			path = NewsViewController;
+			sourceTree = "<group>";
+		};
+		EF4DA85226343CFC006A070B /* NewsCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewsCell;
+			sourceTree = "<group>";
+		};
 		EF69A644263356C000CF9535 /* EmptyViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,8 +249,8 @@
 		EF69A67326335DA400CF9535 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				EF69A67026335D2F00CF9535 /* NewsViewController.swift */,
-				EF69A67426335DB000CF9535 /* NewsSearchCommand.swift */,
+				EF4DA85226343CFC006A070B /* NewsCell */,
+				EF4DA85126343CF5006A070B /* NewsViewController */,
 			);
 			path = News;
 			sourceTree = "<group>";

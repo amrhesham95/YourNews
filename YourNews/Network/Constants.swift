@@ -11,7 +11,7 @@ import Foundation
 struct Constants {
   
   static let API_key = "apiKey"
-  static let API_Key_Value = "85e8aace4ccd4890ac738959657f6f9c"
+  static let API_Key_Value = "86631fbafea44bc69f6514924c6584fa"
   static let API_country = "country"
   static let API_category = "category"
   static let API_pageSize = "pageSize"
