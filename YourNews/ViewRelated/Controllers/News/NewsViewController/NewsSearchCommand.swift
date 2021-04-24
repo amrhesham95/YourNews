@@ -31,7 +31,7 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   }()
   
   private(set) var newsStore: NewsStoreProtocol
-  private(set) var newsFilter: NewsFilter = NewsFilter(country: "", categories: Set<String>()) {
+  private(set) var newsFilter: NewsFilter = ServiceLocator.defaultFilter {
     didSet {
       onFilterChange?()
     }
@@ -39,7 +39,7 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   
   // MARK: Init
   
-  init(newsStore:  NewsStoreProtocol = NewsStore(remote: NewsRemote(network: NetworkManager())), onSelectSearchResult: ((News) -> Void)?) {
+  init(newsStore:  NewsStoreProtocol = ServiceLocator.newsStore, onSelectSearchResult: ((News) -> Void)?) {
     self.onSelectSearchResult = onSelectSearchResult
     self.newsStore = newsStore
   }

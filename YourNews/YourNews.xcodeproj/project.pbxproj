@@ -88,6 +88,10 @@
 		EFD43A542632E2CC00B4DE14 /* UIColor+SystemColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A4D2632E2CC00B4DE14 /* UIColor+SystemColors.swift */; };
 		EFD43A582632E42B00B4DE14 /* UISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A572632E42B00B4DE14 /* UISettings.swift */; };
 		EFD43A6D2632EC8F00B4DE14 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A6C2632EC8F00B4DE14 /* Assets.swift */; };
+		EFF4DA672634B4920046E67A /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4DA662634B4920046E67A /* ServiceLocator.swift */; };
+		EFF4DA752634D06E0046E67A /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4DA742634D06E0046E67A /* UserDefaultsService.swift */; };
+		EFF4DA782634D0C00046E67A /* UserDefaults+UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4DA772634D0C00046E67A /* UserDefaults+UserDefaultsService.swift */; };
+		EFF4DA7B2634D0EF0046E67A /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4DA7A2634D0EF0046E67A /* UserDefaultsKeys.swift */; };
 		FF8061525A20526EAE33A32D /* Pods_YourNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C021046198EA080A27B1140 /* Pods_YourNews.framework */; };
 /* End PBXBuildFile section */
 
@@ -177,6 +181,10 @@
 		EFD43A4D2632E2CC00B4DE14 /* UIColor+SystemColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+SystemColors.swift"; sourceTree = "<group>"; };
 		EFD43A572632E42B00B4DE14 /* UISettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISettings.swift; sourceTree = "<group>"; };
 		EFD43A6C2632EC8F00B4DE14 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = SOURCE_ROOT; };
+		EFF4DA662634B4920046E67A /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		EFF4DA742634D06E0046E67A /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		EFF4DA772634D0C00046E67A /* UserDefaults+UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserDefaultsService.swift"; sourceTree = "<group>"; };
+		EFF4DA7A2634D0EF0046E67A /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +319,7 @@
 		EF760D492632F0EB003E1000 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EFF4DA732634D0530046E67A /* ServiceLocator */,
 				EF760D502632F134003E1000 /* BaseViewModel */,
 			);
 			path = Classes;
@@ -490,6 +499,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		EFF4DA732634D0530046E67A /* ServiceLocator */ = {
+			isa = PBXGroup;
+			children = (
+				EFF4DA662634B4920046E67A /* ServiceLocator.swift */,
+				EFF4DA742634D06E0046E67A /* UserDefaultsService.swift */,
+				EFF4DA772634D0C00046E67A /* UserDefaults+UserDefaultsService.swift */,
+				EFF4DA7A2634D0EF0046E67A /* UserDefaultsKeys.swift */,
+			);
+			path = ServiceLocator;
+			sourceTree = "<group>";
+		};
 		F7A685C25EBAC442E1F4DDB3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,6 +673,7 @@
 				EFD43A162632DE7400B4DE14 /* PublishSubject.swift in Sources */,
 				EF760D8E263312B3003E1000 /* Constants.swift in Sources */,
 				EF69A66626335A5700CF9535 /* SearchResultCell.swift in Sources */,
+				EFF4DA782634D0C00046E67A /* UserDefaults+UserDefaultsService.swift in Sources */,
 				EF69A64F263357E000CF9535 /* KeyboardFrameObserver.swift in Sources */,
 				EF760D472632EFAC003E1000 /* FormViewController.swift in Sources */,
 				EF941BD726346E1A0087F603 /* BaseCardView.swift in Sources */,
@@ -680,6 +701,7 @@
 				EFD43A372632E0B700B4DE14 /* UIView+Helpers.swift in Sources */,
 				EFD43A292632DF7400B4DE14 /* LoadingButton.swift in Sources */,
 				EFD43A1A2632DE7400B4DE14 /* Observable.swift in Sources */,
+				EFF4DA672634B4920046E67A /* ServiceLocator.swift in Sources */,
 				EF69A67526335DB000CF9535 /* NewsSearchCommand.swift in Sources */,
 				EF941BE1263472A20087F603 /* NewsCellRepresentable.swift in Sources */,
 				EFD43A152632DE7400B4DE14 /* Observer.swift in Sources */,
@@ -698,6 +720,7 @@
 				EF4DA84226336964006A070B /* NewsFilter.swift in Sources */,
 				EF760D912633134B003E1000 /* NewsRemoteProtocol.swift in Sources */,
 				EF760D562632F289003E1000 /* UIViewController+ProgressViewable.swift in Sources */,
+				EFF4DA752634D06E0046E67A /* UserDefaultsService.swift in Sources */,
 				EF760D5C2632F31A003E1000 /* InProgressView.swift in Sources */,
 				EF760D9C26334F2B003E1000 /* NewsStoreProtocol.swift in Sources */,
 				EF69A6472633575D00CF9535 /* EmptyStateViewController.swift in Sources */,
@@ -710,6 +733,7 @@
 				EF69A66326335A5700CF9535 /* SyncingCoordinator.swift in Sources */,
 				EFD43A2E2632DFE800B4DE14 /* UIViewController+Helpers.swift in Sources */,
 				EFD43A182632DE7400B4DE14 /* DisposeBag.swift in Sources */,
+				EFF4DA7B2634D0EF0046E67A /* UserDefaultsKeys.swift in Sources */,
 				EF69A66926335A5700CF9535 /* SearchUICommand.swift in Sources */,
 				EFD43A6D2632EC8F00B4DE14 /* Assets.swift in Sources */,
 				EF760D8A26331297003E1000 /* APIError.swift in Sources */,
