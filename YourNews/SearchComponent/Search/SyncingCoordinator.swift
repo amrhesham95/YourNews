@@ -10,7 +10,7 @@ protocol SyncingCoordinatorDelegate: class {
     /// - Parameter reason: A value passed from `resynchronize` or `synchronizeFirstPage`. This can
     ///                     be used to decide how to perform the sync.
     ///
-    func sync(pageNumber: Int, pageSize: Int, reason: String?, onCompletion: ((Bool) -> Void)?)
+    func sync(pageNumber: Int, pageSize: Int, reason: String?, isSearchMode: Bool, onCompletion: ((Bool) -> Void)?)
 }
 
 /// SyncingCoordinator: Encapsulates all of the "Last Refreshed / Should Refresh" Paging Logic.
@@ -77,7 +77,7 @@ class SyncingCoordinator {
     ///     2.  Verify if the (NEXT) page isn't being sync'ed (OR) if its cache has expired
     ///     3.  Proceed sync'ing the next page, if possible / needed
     ///
-    func ensureNextPageIsSynchronized(lastVisibleIndex: Int) {
+    func ensureNextPageIsSynchronized(isSearchMode: Bool, lastVisibleIndex: Int) {
         guard isLastElementInPage(elementIndex: lastVisibleIndex) else {
             return
         }
@@ -87,7 +87,7 @@ class SyncingCoordinator {
             return
         }
 
-        synchronize(pageNumber: nextPage)
+      synchronize(pageNumber: nextPage, isSearchMode: isSearchMode)
     }
 
     /// Resets Internal State + (RE)synchronizes the first page in the collection.
@@ -96,9 +96,9 @@ class SyncingCoordinator {
     ///                     additional information for the `delegate` and is not used internally
     ///                     by `SyncCoordinator`.
     ///
-    func resynchronize(reason: String? = nil, onCompletion: (() -> Void)? = nil) {
+    func resynchronize(reason: String? = nil, isSearchMode: Bool, onCompletion: (() -> Void)? = nil) {
         resetInternalState()
-        synchronizeFirstPage(reason: reason, onCompletion: onCompletion)
+        synchronizeFirstPage(reason: reason, isSearchMode: isSearchMode, onCompletion: onCompletion)
     }
 
     /// Synchronizes the First Page in the collection.
@@ -107,8 +107,8 @@ class SyncingCoordinator {
     ///                     additional information for the `delegate` and is not used internally
     ///                     by `SyncCoordinator`.
     ///
-    func synchronizeFirstPage(reason: String? = nil, onCompletion: (() -> Void)? = nil) {
-        synchronize(pageNumber: pageFirstIndex, reason: reason, onCompletion: onCompletion)
+    func synchronizeFirstPage(reason: String? = nil, isSearchMode: Bool, onCompletion: (() -> Void)? = nil) {
+      synchronize(pageNumber: pageFirstIndex, reason: reason, isSearchMode: isSearchMode, onCompletion: onCompletion)
     }
 }
 
@@ -118,14 +118,14 @@ private extension SyncingCoordinator {
 
     /// Synchronizes a given Page Number
     ///
-    func synchronize(pageNumber: Int, reason: String? = nil, onCompletion: (() -> Void)? = nil) {
+    func synchronize(pageNumber: Int, reason: String? = nil, isSearchMode: Bool, onCompletion: (() -> Void)? = nil) {
         guard let delegate = delegate else {
             fatalError()
         }
 
         markAsBeingSynced(pageNumber: pageNumber)
 
-        delegate.sync(pageNumber: pageNumber, pageSize: pageSize, reason: reason) { success in
+      delegate.sync(pageNumber: pageNumber, pageSize: pageSize, reason: reason, isSearchMode: isSearchMode) { success in
             if success {
                 self.markAsUpdated(pageNumber: pageNumber)
             }
