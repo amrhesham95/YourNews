@@ -49,7 +49,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="KkN-dZ-BV2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="KkN-dZ-BV2">
                                 <rect key="frame" x="0.0" y="86" width="347" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="0Kd-43-vZV"/>
