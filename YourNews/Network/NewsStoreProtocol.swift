@@ -18,5 +18,5 @@ protocol NewsStoreProtocol {
   
   /// Fetch headlines
   ///
-  func getHeadlines(country: String, category: String, searchWord: String, pageSize: Int, page: Int, complitionHandler: @escaping StoreNewsCompletionHandler)
+  func getHeadlines(request: NewsSearchRequest, searchWord: String, complitionHandler: @escaping StoreNewsCompletionHandler)
 }

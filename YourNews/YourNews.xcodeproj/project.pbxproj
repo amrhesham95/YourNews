@@ -52,6 +52,7 @@
 		EF760D952633172F003E1000 /* NewsRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D942633172F003E1000 /* NewsRemote.swift */; };
 		EF760D9926334F0F003E1000 /* NewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D9826334F0F003E1000 /* NewsStore.swift */; };
 		EF760D9C26334F2B003E1000 /* NewsStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF760D9B26334F2B003E1000 /* NewsStoreProtocol.swift */; };
+		EF941BCE26346C110087F603 /* NewsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF941BCD26346C110087F603 /* NewsSearchRequest.swift */; };
 		EFD439F22632DDD900B4DE14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F12632DDD900B4DE14 /* AppDelegate.swift */; };
 		EFD439F62632DDD900B4DE14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F52632DDD900B4DE14 /* ViewController.swift */; };
 		EFD439FB2632DDDB00B4DE14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD439FA2632DDDB00B4DE14 /* Assets.xcassets */; };
@@ -133,6 +134,7 @@
 		EF760D942633172F003E1000 /* NewsRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRemote.swift; sourceTree = "<group>"; };
 		EF760D9826334F0F003E1000 /* NewsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStore.swift; sourceTree = "<group>"; };
 		EF760D9B26334F2B003E1000 /* NewsStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStoreProtocol.swift; sourceTree = "<group>"; };
+		EF941BCD26346C110087F603 /* NewsSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSearchRequest.swift; sourceTree = "<group>"; };
 		EFD439EE2632DDD900B4DE14 /* YourNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD439F12632DDD900B4DE14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFD439F52632DDD900B4DE14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 			children = (
 				EF760D7B26330DD1003E1000 /* News.swift */,
 				EF4DA84126336964006A070B /* NewsFilter.swift */,
+				EF941BCD26346C110087F603 /* NewsSearchRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				EF69A66A26335A5700CF9535 /* FooterSpinnerView.swift in Sources */,
 				EF69A66B26335A5700CF9535 /* ReadOnlyConvertible.swift in Sources */,
 				EF760D4E2632F11A003E1000 /* State.swift in Sources */,
+				EF941BCE26346C110087F603 /* NewsSearchRequest.swift in Sources */,
 				EFD43A192632DE7400B4DE14 /* Disposable.swift in Sources */,
 				EF4DA85426343F87006A070B /* FilterSection.swift in Sources */,
 				EFD43A522632E2CC00B4DE14 /* Style.swift in Sources */,

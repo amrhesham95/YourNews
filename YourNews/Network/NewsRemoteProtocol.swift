@@ -18,5 +18,5 @@ protocol NewsRemoteProtocol {
   
   /// Fetch headlines 
   ///
-  func getHeadlines(country: String, category: String, searchWord: String, pageSize: Int, page: Int, complitionHandler completionHandler: @escaping RemoteNewsCompletionHandler)
+  func getHeadlines(request: NewsSearchRequest, searchWord: String, completionHandler: @escaping RemoteNewsCompletionHandler)
 }
