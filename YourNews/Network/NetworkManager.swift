@@ -11,7 +11,7 @@ import Moya
 // MARK: - Networkable
 //
 protocol Networkable {
-  func fetchData(target: NewsAPI , complitionHandler: @escaping (NewsResponse?, APIError?) -> Void)
+  func fetchData<T: Codable>(target: NewsAPI , complitionHandler: @escaping (T?, APIError?) -> Void)
   
 }
 
@@ -20,23 +20,24 @@ protocol Networkable {
 class NetworkManager: Networkable {
   
   fileprivate let provider = MoyaProvider<NewsAPI>(plugins: [NetworkManager.loggingPlugin()])
-  func fetchData(target: NewsAPI , complitionHandler: @escaping (NewsResponse?, APIError?) -> Void) {
+  
+  func fetchData<T: Codable>(target: NewsAPI , complitionHandler: @escaping (T?, APIError?) -> Void) {
     
     provider.request(target) { (result) in
       switch  result {
       case .success(let response) :
         do {
-          let resultApi = try JSONDecoder().decode(NewsResponse.self, from: response.data)
-          complitionHandler(resultApi,nil)
+          let resultApi = try JSONDecoder().decode(T.self, from: response.data)
+          complitionHandler(resultApi, nil)
           
         }catch(let ex) {
           print(#function, "exception with: \(ex)")
-          complitionHandler(nil,.notFound)
+          complitionHandler(nil, .notFound)
         }
         
       case .failure(let error) :
         print(#function, "error with: \(error)")
-        complitionHandler(nil,.noInternet)
+        complitionHandler(nil, .noInternet)
       }
     }
   }
