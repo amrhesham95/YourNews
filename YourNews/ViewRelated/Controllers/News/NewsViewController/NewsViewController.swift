@@ -42,12 +42,17 @@ class NewsViewController: UIViewController {
     super.viewDidLoad()
     
     configureListViewController()
+    configureOnFilterTapped()
   }
 }
 
 // MARK: - View's Configuration
 //
 private extension NewsViewController {
+  
+  func configureOnFilterTapped() {
+    searchViewController.configureOnFilterTapped(completion: presentFilter)
+  }
   
   /// Apply configuration for list view controller
   ///
@@ -63,6 +68,20 @@ private extension NewsViewController {
   
   func handleOnSelectArticle(article: News) {
     print(article)
+  }
+  
+  func presentFilter() {
+    let filterViewController = NewsFilterViewController(delegate: self)
+    present(filterViewController, animated: true)
+  }
+}
+
+// MARK: - News filter delegate
+//
+extension NewsViewController: NewsFilterDelegate {
+  func newsFilter(viewController: NewsFilterViewController, didTappedSearch button: UIButton, with result: NewsFilter) {
+    viewController.dismiss(animated: true)
+    newsSearchCommand.updateFilter(with: result)
   }
 }
 
