@@ -17,9 +17,9 @@ class NewsRemote: NewsRemoteProtocol {
     self.network = network
   }
   
-  func getHeadlines(country: String, category: String, pageSize: Int, page: Int, complitionHandler completionHandler: @escaping RemoteNewsCompletionHandler) {
+  func getHeadlines(country: String, category: String, searchWord: String, pageSize: Int, page: Int, complitionHandler completionHandler: @escaping RemoteNewsCompletionHandler) {
     
-    let target: NewsAPI = .topheadlines(country: country, category: category, pageSize: pageSize, page: page)
+    let target: NewsAPI = .topheadlines(country: country, category: category, searchWord: searchWord, pageSize: pageSize, page: page)
     network?.fetchData(target: target, complitionHandler: completionHandler)
   }
 }

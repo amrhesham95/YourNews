@@ -23,8 +23,8 @@ class NewsStore: NewsStoreProtocol {
   
   // MARK: - Handlers
   
-  func getHeadlines(country: String, category: String, pageSize: Int, page: Int, complitionHandler: @escaping StoreNewsCompletionHandler) {
-    remote?.getHeadlines(country: country, category: category, pageSize: pageSize, page: page, complitionHandler: { response, error in
+  func getHeadlines(country: String, category: String, searchWord: String, pageSize: Int, page: Int, complitionHandler: @escaping StoreNewsCompletionHandler) {
+    remote?.getHeadlines(country: country, category: category, searchWord: searchWord, pageSize: pageSize, page: page, complitionHandler: { response, error in
       guard let response = response, error == nil else {
         complitionHandler(.failure(error ?? GeneralError()))
         return
