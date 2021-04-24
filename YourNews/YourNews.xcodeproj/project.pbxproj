@@ -92,6 +92,7 @@
 		EFF4DA752634D06E0046E67A /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4DA742634D06E0046E67A /* UserDefaultsService.swift */; };
 		EFF4DA782634D0C00046E67A /* UserDefaults+UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4DA772634D0C00046E67A /* UserDefaults+UserDefaultsService.swift */; };
 		EFF4DA7B2634D0EF0046E67A /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4DA7A2634D0EF0046E67A /* UserDefaultsKeys.swift */; };
+		EFF4DA7F2634D2FF0046E67A /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4DA7E2634D2FF0046E67A /* OnboardingViewModel.swift */; };
 		FF8061525A20526EAE33A32D /* Pods_YourNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C021046198EA080A27B1140 /* Pods_YourNews.framework */; };
 /* End PBXBuildFile section */
 
@@ -185,6 +186,7 @@
 		EFF4DA742634D06E0046E67A /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		EFF4DA772634D0C00046E67A /* UserDefaults+UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserDefaultsService.swift"; sourceTree = "<group>"; };
 		EFF4DA7A2634D0EF0046E67A /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		EFF4DA7E2634D2FF0046E67A /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,9 +311,9 @@
 		EF760D3E2632EF37003E1000 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EFF4DA7D2634D2EF0046E67A /* Onboarding */,
 				EF4DA85A263449CE006A070B /* NewsFilter */,
 				EF69A67326335DA400CF9535 /* News */,
-				EF760D3F2632EF4A003E1000 /* OnboardingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -510,6 +512,15 @@
 			path = ServiceLocator;
 			sourceTree = "<group>";
 		};
+		EFF4DA7D2634D2EF0046E67A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				EF760D3F2632EF4A003E1000 /* OnboardingViewController.swift */,
+				EFF4DA7E2634D2FF0046E67A /* OnboardingViewModel.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		F7A685C25EBAC442E1F4DDB3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,6 +692,7 @@
 				EF69A66526335A5700CF9535 /* ResultController.swift in Sources */,
 				EF760D652632F425003E1000 /* UIView+Appearance.swift in Sources */,
 				EFD43A512632E2CC00B4DE14 /* UIFont+App.swift in Sources */,
+				EFF4DA7F2634D2FF0046E67A /* OnboardingViewModel.swift in Sources */,
 				EF69A652263357E000CF9535 /* KeyboardFrameAdjustmentProvider.swift in Sources */,
 				EF760D8026330ED8003E1000 /* NetworkManager.swift in Sources */,
 				EF69A6552633580100CF9535 /* WebviewHelper.swift in Sources */,
