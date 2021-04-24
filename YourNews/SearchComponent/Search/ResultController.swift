@@ -38,6 +38,9 @@ public class ResultsController<T: ResultsControllerMutableType> {
   /// caught
   ///
   public var onDidResetContent: (() -> Void)?
+  
+  /// Scroll 
+  ///
 
   /// Content;
   ///
@@ -161,7 +164,7 @@ public extension ResultsController {
         /// Update Objects
         ///
         func updateObjects(_ newObjects: [T]) {
-            objects = newObjects
+          objects.append(contentsOf: newObjects)
         }
       
         var numberOfObjects: Int {
