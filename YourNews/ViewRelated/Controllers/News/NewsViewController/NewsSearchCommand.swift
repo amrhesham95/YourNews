@@ -22,14 +22,14 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   
   // MARK: - Properties
   
-  let searchBarPlaceholder: String = "Search all departments"
+  let searchBarPlaceholder: String = Strings.searchBarPlaceholder
   
   let resultsController: ResultsController<ResultsControllerModel> = {
     return ResultsController<Model>()
   }()
   
   private(set) var newsStore: NewsStoreProtocol
-  private(set) var newsFilter: NewsFilter = NewsFilter(country: "", category: "")
+  private(set) var newsFilter: NewsFilter = NewsFilter(country: "", categories: Set<String>())
   
   // MARK: Init
   
@@ -61,13 +61,11 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   ///
   func synchronizeModels(keyword: String, pageNumber: Int, pageSize: Int, isSearchMode: Bool, onCompletion: ((Bool) -> Void)?) {
     resetIfNeeded(pageNumber, isSearchMode: isSearchMode)
-    newsStore.getHeadlines(country: "za", category: "business", pageSize: pageSize, page: pageNumber) { [weak self] result in
+    newsStore.getHeadlines(country: "za", category: "business", searchWord: keyword, pageSize: pageSize, page: pageNumber) { [weak self] result in
       switch result {
       case .success(let response):
-        let articles = response.articles ?? []
-        self?.resultsController.insert(articles)
-        onCompletion?(articles.count == pageSize)
-        
+        self?.handleSuccessResponse(response)
+        onCompletion?(response.totalResults ?? .zero == pageSize)
       case .failure:
         onCompletion?(false)
       }
@@ -76,6 +74,11 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   
   func didSelectSearchResult(model: Model, from viewController: UIViewController, reloadData: () -> Void, updateActionButton: () -> Void) {
     onSelectSearchResult?(model)
+  }
+  
+  func handleSuccessResponse(_ response: NewsResponse) {
+    let articles = response.articles ?? []
+    resultsController.insert(articles)
   }
 }
 
@@ -89,5 +92,13 @@ private extension NewsSearchCommand {
     if pageNumber == .zero || isSearchMode {
       resultsController.reset()
     }
+  }
+}
+
+// MARK: - Constants
+private extension NewsSearchCommand {
+  
+  enum Strings {
+    static var searchBarPlaceholder: String { "Search articles" }
   }
 }
