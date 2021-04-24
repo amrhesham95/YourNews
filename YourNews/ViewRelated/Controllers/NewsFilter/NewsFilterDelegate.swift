@@ -13,5 +13,5 @@ protocol NewsFilterDelegate: class {
   
   /// When search button tapped
   ///
-  func notificationsFilter(viewController: NewsFilterViewController, didTappedSearch button: UIButton, with result: NewsFilter)
+  func newsFilter(viewController: NewsFilterViewController, didTappedSearch button: UIButton, with result: NewsFilter)
 }
