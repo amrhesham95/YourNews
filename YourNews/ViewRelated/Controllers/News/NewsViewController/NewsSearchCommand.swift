@@ -20,6 +20,8 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   
   private let onSelectSearchResult: ((Model) -> Void)?
   
+  var onFilterChange: (() -> Void)?
+  
   // MARK: - Properties
   
   let searchBarPlaceholder: String = Strings.searchBarPlaceholder
@@ -29,7 +31,11 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   }()
   
   private(set) var newsStore: NewsStoreProtocol
-  private(set) var newsFilter: NewsFilter = NewsFilter(country: "", categories: Set<String>())
+  private(set) var newsFilter: NewsFilter = NewsFilter(country: "", categories: Set<String>()) {
+    didSet {
+      onFilterChange?()
+    }
+  }
   
   // MARK: Init
   
@@ -61,7 +67,8 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   ///
   func synchronizeModels(keyword: String, pageNumber: Int, pageSize: Int, isSearchMode: Bool, onCompletion: ((Bool) -> Void)?) {
     resetIfNeeded(pageNumber, isSearchMode: isSearchMode)
-    newsStore.getHeadlines(country: "za", category: "business", searchWord: keyword, pageSize: pageSize, page: pageNumber) { [weak self] result in
+    let request = makeRequest(pageNumber: pageNumber, pageSize: pageSize)
+    newsStore.getHeadlines(request: request, searchWord: keyword) { [weak self] result in
       switch result {
       case .success(let response):
         self?.handleSuccessResponse(response)
@@ -82,6 +89,15 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   }
 }
 
+// MARK: - Public Handlers
+//
+extension NewsSearchCommand {
+  
+  func updateFilter(with filter: NewsFilter) {
+    self.newsFilter = filter
+  }
+}
+
 // MARK: - Private Helpers
 //
 private extension NewsSearchCommand {
@@ -92,6 +108,15 @@ private extension NewsSearchCommand {
     if pageNumber == .zero || isSearchMode {
       resultsController.reset()
     }
+  }
+  
+  /// For resync request with filter
+  /// - Parameters:
+  ///   - pageNumber: Current page number
+  ///   - pageSize: Current page size
+  /// - Returns: Valid request as `NewsSearchRequest`
+  private func makeRequest(pageNumber: Int, pageSize: Int) -> NewsSearchRequest {
+    return NewsSearchRequest(newsFilter: newsFilter, pageNumber: pageNumber, pageSize: pageSize)
   }
 }
 
