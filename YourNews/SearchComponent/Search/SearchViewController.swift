@@ -67,8 +67,6 @@ where Cell.SearchModel == Command.CellViewModel {
   
   private(set) var onFilterTapped: (() -> Void)?
   
-  /// UI Active State/Users/mohamedkorany/Desktop/CFC/Classes/Tools/SyncCoordinator.swift
-  ///
   private var state: State = .notInitialized {
     didSet {
       didLeave(state: oldValue)
@@ -230,8 +228,6 @@ where Cell.SearchModel == Command.CellViewModel {
   //
   
   @IBAction func dismissWasPressed() {
-//    view.endEditing(true)
-//    dismiss(animated: true, completion: nil)
     onFilterTapped?()
   }
   
