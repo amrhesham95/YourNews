@@ -329,7 +329,7 @@ private extension SearchViewController {
   /// Setup: Actions
   ///
   func configureActions() {
-    let title = "Cancel"
+    let title = "Filter"
     cancelButton.setTitle(title, for: .normal)
   }
   
