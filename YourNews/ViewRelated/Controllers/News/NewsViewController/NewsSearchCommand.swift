@@ -37,6 +37,11 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
     }
   }
   
+  /// Throttler instance to control sending search requests
+  ///
+  private lazy var throttler: Throttler = Throttler(seconds: 1)
+
+  
   // MARK: Init
   
   init(newsStore:  NewsStoreProtocol = ServiceLocator.newsStore, onSelectSearchResult: ((News) -> Void)?) {
@@ -66,15 +71,20 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   /// Synchronizes the departments matching a given Keyword
   ///
   func synchronizeModels(keyword: String, pageNumber: Int, pageSize: Int, isSearchMode: Bool, onCompletion: ((Bool) -> Void)?) {
-    resetIfNeeded(pageNumber, isSearchMode: isSearchMode)
-    guard let request = makeRequest(pageNumber: pageNumber, pageSize: pageSize) else { return }
-    newsStore.getHeadlines(request: request, searchWord: keyword) { [weak self] result in
-      switch result {
-      case .success(let response):
-        self?.handleSuccessResponse(response)
-        onCompletion?(response.totalResults ?? .zero == pageSize)
-      case .failure:
-        onCompletion?(false)
+    throttler.throttle { [weak self] in
+      DispatchQueue.main.async {
+        self?.resetIfNeeded(pageNumber, isSearchMode: isSearchMode)
+        guard let request = self?.makeRequest(pageNumber: pageNumber, pageSize: pageSize) else { return }
+        self?.newsStore.getHeadlines(request: request, searchWord: keyword) { [weak self] result in
+          switch result {
+          case .success(let response):
+            
+            self?.handleSuccessResponse(response)
+            onCompletion?(response.totalResults ?? .zero == pageSize)
+          case .failure:
+            onCompletion?(false)
+          }
+        }
       }
     }
   }
