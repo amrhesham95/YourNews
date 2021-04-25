@@ -91,6 +91,8 @@ where Cell.SearchModel == Command.CellViewModel {
   /// Dispose bag
   ///
   let disposeBag = DisposeBag()
+  
+  var lastVisibleIndex: IndexPath = IndexPath()
 
   // MARK: - Init
   
@@ -179,6 +181,10 @@ where Cell.SearchModel == Command.CellViewModel {
     return cell
   }
   
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    lastVisibleIndex = indexPath
+  }
+  
   // MARK: - UITableViewDelegate Conformance
   //
   
@@ -219,7 +225,7 @@ where Cell.SearchModel == Command.CellViewModel {
   func configurePaginationTracker() {
     scrollWatcher.trigger.subscribe { [weak self] _ in
       guard let self = self else { return }
-      self.syncingCoordinator.ensureNextPageIsSynchronized(isSearchMode: false, lastVisibleIndex: self.resultsController.numberOfObjects - 1)
+      self.syncingCoordinator.ensureNextPageIsSynchronized(isSearchMode: false, lastVisibleIndex: self.lastVisibleIndex.row)
     }.disposed(by: disposeBag)
   }
   
