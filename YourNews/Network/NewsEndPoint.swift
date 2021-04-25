@@ -66,7 +66,8 @@ extension NewsAPI: TargetType {
                                              Constants.API_searchWord: searchWord,
                                              Constants.API_key: Constants.API_Key_Value,
                                              Constants.API_pageSize: request.pageSize,
-                                             Constants.API_page: request.pageNumber],
+                                             Constants.API_page: request.pageNumber,
+                                             Constants.API_sortBy: Constants.API_sortByDate],
                                 encoding: URLEncoding.queryString)
     }
   }
