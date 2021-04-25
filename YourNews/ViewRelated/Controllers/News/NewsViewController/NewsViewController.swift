@@ -67,7 +67,7 @@ private extension NewsViewController {
 private extension NewsViewController {
   
   func handleOnSelectArticle(article: News) {
-    print(article)
+    WebviewHelper.launch(article.url, with: self)
   }
   
   func presentFilter() {
