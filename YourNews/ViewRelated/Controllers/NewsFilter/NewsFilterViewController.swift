@@ -67,7 +67,7 @@ extension NewsFilterViewController {
   /// Configure header view
   ///
   func configureHeaderView() {
-    headerView.imageView.image = Asset.placeholderImageIcon.image
+    headerView.imageView.image = Asset.stretchyHeader.image
   }
 }
 
