@@ -61,7 +61,7 @@ extension NewsAPI: TargetType {
     switch self {
     
     case .topheadlines(let request, let searchWord):
-      return .requestParameters(parameters: [Constants.API_country: request.newsFilter.country,
+      return .requestParameters(parameters: [Constants.API_country: request.newsFilter.country.code,
                                              Constants.API_category: request.newsFilter.categories.first ?? "",
                                              Constants.API_searchWord: searchWord,
                                              Constants.API_key: Constants.API_Key_Value,
@@ -76,6 +76,4 @@ extension NewsAPI: TargetType {
   var headers: [String : String]? {
     return ["Content-type":"application/json"]
   }
-  
-  
 }
