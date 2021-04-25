@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		EF1D0C9E2635E42400059F67 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0C9D2635E42300059F67 /* AppCoordinator.swift */; };
 		EF4B8324263605F60004640E /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B8323263605F60004640E /* Throttler.swift */; };
+		EF4B83272636291A0004640E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B83262636291A0004640E /* Country.swift */; };
+		EF4B832B263629710004640E /* FilterSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B832A263629710004640E /* FilterSectionViewModel.swift */; };
 		EF4DA84226336964006A070B /* NewsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4DA84126336964006A070B /* NewsFilter.swift */; };
 		EF4DA84F263436A5006A070B /* ScrollWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4DA84E263436A5006A070B /* ScrollWatcher.swift */; };
 		EF4DA85426343F87006A070B /* FilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4DA85326343F87006A070B /* FilterSection.swift */; };
@@ -104,6 +106,8 @@
 		96D039CC77BAE652A8666913 /* Pods-YourNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourNews.debug.xcconfig"; path = "Target Support Files/Pods-YourNews/Pods-YourNews.debug.xcconfig"; sourceTree = "<group>"; };
 		EF1D0C9D2635E42300059F67 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		EF4B8323263605F60004640E /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
+		EF4B83262636291A0004640E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		EF4B832A263629710004640E /* FilterSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionViewModel.swift; sourceTree = "<group>"; };
 		EF4DA84126336964006A070B /* NewsFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFilter.swift; sourceTree = "<group>"; };
 		EF4DA84E263436A5006A070B /* ScrollWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollWatcher.swift; sourceTree = "<group>"; };
 		EF4DA85326343F87006A070B /* FilterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSection.swift; sourceTree = "<group>"; };
@@ -214,6 +218,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EF4B8329263629610004640E /* FilterSection */ = {
+			isa = PBXGroup;
+			children = (
+				EF4DA85326343F87006A070B /* FilterSection.swift */,
+				EF4B832A263629710004640E /* FilterSectionViewModel.swift */,
+			);
+			path = FilterSection;
+			sourceTree = "<group>";
+		};
 		EF4DA85126343CF5006A070B /* NewsViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,11 +316,11 @@
 		EF760D3D2632EF19003E1000 /* ViewRelated */ = {
 			isa = PBXGroup;
 			children = (
+				EF4B8329263629610004640E /* FilterSection */,
 				EF760D3E2632EF37003E1000 /* Controllers */,
 				EFD43A1D2632DEB100B4DE14 /* ReusableViews */,
 				EFD43A462632E2CC00B4DE14 /* Styles */,
 				EFD43A2C2632DFDB00B4DE14 /* Extensions */,
-				EF4DA85326343F87006A070B /* FilterSection.swift */,
 				EF1D0C9D2635E42300059F67 /* AppCoordinator.swift */,
 			);
 			path = ViewRelated;
@@ -357,6 +370,7 @@
 				EF760D7B26330DD1003E1000 /* News.swift */,
 				EF4DA84126336964006A070B /* NewsFilter.swift */,
 				EF941BCD26346C110087F603 /* NewsSearchRequest.swift */,
+				EF4B83262636291A0004640E /* Country.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -743,9 +757,11 @@
 				EF760D5C2632F31A003E1000 /* InProgressView.swift in Sources */,
 				EF760D9C26334F2B003E1000 /* NewsStoreProtocol.swift in Sources */,
 				EF69A6472633575D00CF9535 /* EmptyStateViewController.swift in Sources */,
+				EF4B83272636291A0004640E /* Country.swift in Sources */,
 				EF69A66426335A5700CF9535 /* SearchViewController.swift in Sources */,
 				EFD43A582632E42B00B4DE14 /* UISettings.swift in Sources */,
 				EF4B8324263605F60004640E /* Throttler.swift in Sources */,
+				EF4B832B263629710004640E /* FilterSectionViewModel.swift in Sources */,
 				EF760D622632F3EF003E1000 /* UITableView+Helpers.swift in Sources */,
 				EFD43A502632E2CC00B4DE14 /* ColorStudio.swift in Sources */,
 				EF941BE72634A54A0087F603 /* UIImageView+ImageLoader.swift in Sources */,

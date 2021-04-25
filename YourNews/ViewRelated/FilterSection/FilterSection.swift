@@ -6,14 +6,20 @@
 //
 
 import Eureka
+import Foundation
 
 // MARK: - Filter Section
 //
 class FilterSection: Section {
   
+  // MARK: - Typealias
   typealias Element = NewsFilter
-  typealias CountriesPushRow = PushRow<String>
+  typealias CountriesPushRow = PushRow<Country>
   typealias CategoriesPushRow = MultipleSelectorRow<String>
+  
+  // MARK: - Properties
+  
+  let viewModel = FilterSectionViewModel()
   
   /// Value
   ///
@@ -36,7 +42,7 @@ class FilterSection: Section {
   
   init(initialValue: NewsFilter?) {
     // Set to default filter which was selected from Onboarding screen
-    self.valueSubject = BehaviorSubject(initialValue ?? NewsFilter(country: "", categories: []))
+    self.valueSubject = BehaviorSubject(initialValue ?? NewsFilter(country: Country(name: "", code: ""), categories: []))
     super.init()
     self <<< countriesRow
       <<< categoriesRow
@@ -58,7 +64,7 @@ class FilterSection: Section {
     return CountriesPushRow { row in
       row.title = Strings.countries
       row.value = value.country
-      row.options = ["ae", "ar", "at"]
+      row.options = viewModel.allCountries
     }.onChange { [weak self] in
       guard let value = $0.value else { return }
       self?.value.country = value
@@ -69,9 +75,9 @@ class FilterSection: Section {
   ///
   lazy var categoriesRow: CategoriesPushRow = {
     return CategoriesPushRow { row in
-      row.title = Strings.countries
+      row.title = Strings.categories
       row.value = value.categories
-      row.options = ["business", "entertainment", "general"] 
+      row.options = viewModel.categories
     }.onChange { [weak self] in
       guard let value = $0.value else { return }
       self?.value.categories = value

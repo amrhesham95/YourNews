@@ -10,6 +10,6 @@ import Foundation
 // MARK: - NewsFilter
 //
 struct NewsFilter: Codable {
-  var country: String
+  var country: Country
   var categories: Set<String>
 }
