@@ -25,10 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   ///
   var window: UIWindow?
   
+  /// Coordinates app navigation.
+  ///
+  var appCoordinator: AppCoordinator?
+
+  
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
     setupMainWindow()
+    appCoordinator?.start()
     return true
   }
 }
@@ -42,8 +48,9 @@ private extension AppDelegate {
   func setupMainWindow() {
     let window = UIWindow()
     window.makeKeyAndVisible()
-    window.rootViewController = OnboardingViewController()
+    let navigationController = UINavigationController()
+    appCoordinator = AppCoordinator(navigationController: navigationController)
+    window.rootViewController = appCoordinator?.navigationController // to be replaced with tab bar if implemented
     self.window = window
-  }
+  }  
 }
-

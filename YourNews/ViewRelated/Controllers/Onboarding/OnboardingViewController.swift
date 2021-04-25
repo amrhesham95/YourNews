@@ -16,6 +16,7 @@ class OnboardingViewController: FormViewController {
   
   let viewModel: OnboardingViewModel
   lazy var filterSection = FilterSection(initialValue: nil)
+  weak var coordinator: AppCoordinator?
   
   init(viewModel: OnboardingViewModel) {
     self.viewModel = viewModel
@@ -40,8 +41,8 @@ class OnboardingViewController: FormViewController {
 //
 extension OnboardingViewController {
   func viewModelFilterBinding() {
-    viewModel.filterObservable.subscribe { _ in
-      print("Navigate to news screen")
+    viewModel.filterObservable.subscribe { [weak self] _ in
+      self?.coordinator?.showNewsViewController()
     }
   }
 }
