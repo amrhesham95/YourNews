@@ -10,6 +10,7 @@
 		EF1D0C9E2635E42400059F67 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0C9D2635E42300059F67 /* AppCoordinator.swift */; };
 		EF2DBBFC26373F17001B53FF /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DBBFB26373F17001B53FF /* RealmStorage.swift */; };
 		EF2DBC1326374345001B53FF /* StorageNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DBC1226374345001B53FF /* StorageNews.swift */; };
+		EF2DBC16263748B5001B53FF /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DBC15263748B5001B53FF /* Reachability.swift */; };
 		EF4B8324263605F60004640E /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B8323263605F60004640E /* Throttler.swift */; };
 		EF4B83272636291A0004640E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B83262636291A0004640E /* Country.swift */; };
 		EF4B832B263629710004640E /* FilterSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B832A263629710004640E /* FilterSectionViewModel.swift */; };
@@ -116,6 +117,7 @@
 		EF1D0C9D2635E42300059F67 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		EF2DBBFB26373F17001B53FF /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		EF2DBC1226374345001B53FF /* StorageNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageNews.swift; sourceTree = "<group>"; };
+		EF2DBC15263748B5001B53FF /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		EF4B8323263605F60004640E /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
 		EF4B83262636291A0004640E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		EF4B832A263629710004640E /* FilterSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionViewModel.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 				EFD43A0A2632DE7400B4DE14 /* Observables */,
 				EF760D682632F52F003E1000 /* NavigationScrollBehavior.swift */,
 				EF4B8323263605F60004640E /* Throttler.swift */,
+				EF2DBC15263748B5001B53FF /* Reachability.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -835,6 +838,7 @@
 				EF4B832B263629710004640E /* FilterSectionViewModel.swift in Sources */,
 				EF760D622632F3EF003E1000 /* UITableView+Helpers.swift in Sources */,
 				EFD43A502632E2CC00B4DE14 /* ColorStudio.swift in Sources */,
+				EF2DBC16263748B5001B53FF /* Reachability.swift in Sources */,
 				EF941BE72634A54A0087F603 /* UIImageView+ImageLoader.swift in Sources */,
 				EF4DA84F263436A5006A070B /* ScrollWatcher.swift in Sources */,
 				EF69A66326335A5700CF9535 /* SyncingCoordinator.swift in Sources */,
