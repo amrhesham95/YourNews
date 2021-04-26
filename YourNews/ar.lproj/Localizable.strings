@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  YourNews
+
+  Created by Amr Hesham on 26/04/2021.
+  
+*/
+
+"Filter" = "تعديل البحث";
+"Submit" = "تأكيد";
+"Country" = "البلد";
+"Category" = "النوع";
+"Search articles" = "بحث المقالات";

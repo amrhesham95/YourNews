@@ -13,7 +13,7 @@ where Cell.SearchModel == Command.CellViewModel {
   
   /// Dismiss Action
   ///
-  @IBOutlet private var cancelButton: UIButton!
+  @IBOutlet private var filterButton: UIButton!
   
   /// Main SearchBar
   ///
@@ -199,7 +199,7 @@ where Cell.SearchModel == Command.CellViewModel {
       guard let self = self else {
         return
       }
-      self.searchUICommand.configureActionButton(self.cancelButton, onDismiss: { [weak self] in
+      self.searchUICommand.configureActionButton(self.filterButton, onDismiss: { [weak self] in
         self?.dismissWasPressed()
       })
     })
@@ -322,15 +322,14 @@ private extension SearchViewController {
   /// Setup: Cancel Button
   ///
   func configureCancelButton() {
-    //        cancelButton.applyModalCancelButtonStyle()
-    cancelButton.accessibilityIdentifier = searchUICommand.cancelButtonAccessibilityIdentifier
+    filterButton.accessibilityIdentifier = searchUICommand.cancelButtonAccessibilityIdentifier
   }
   
   /// Setup: Actions
   ///
   func configureActions() {
-    let title = "Filter"
-    cancelButton.setTitle(title, for: .normal)
+    let title = Strings.filter
+    filterButton.setTitle(title, for: .normal)
   }
   
   /// Setup: Results Controller
@@ -615,5 +614,13 @@ private extension SearchViewController {
     /// The state when the search has finished but there are no results.
     ///
     case empty
+  }
+}
+
+// MARK: - Strings
+//
+private extension SearchViewController {
+  enum Strings {
+    static var filter: String { "Filter".localized }
   }
 }

@@ -11,6 +11,13 @@
 		EF4B8324263605F60004640E /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B8323263605F60004640E /* Throttler.swift */; };
 		EF4B83272636291A0004640E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B83262636291A0004640E /* Country.swift */; };
 		EF4B832B263629710004640E /* FilterSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B832A263629710004640E /* FilterSectionViewModel.swift */; };
+		EF4B8343263636610004640E /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B833C263636610004640E /* String+LocalizeTableName.swift */; };
+		EF4B8344263636610004640E /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B833D263636610004640E /* Localize.swift */; };
+		EF4B8345263636610004640E /* String+LocalizeBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B833F263636610004640E /* String+LocalizeBundle.swift */; };
+		EF4B8346263636610004640E /* String+LocalizedBundleTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B8340263636610004640E /* String+LocalizedBundleTableName.swift */; };
+		EF4B8347263636610004640E /* IBDesignable+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B8341263636610004640E /* IBDesignable+Localize.swift */; };
+		EF4B8348263636610004640E /* Localize+UIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B8342263636610004640E /* Localize+UIHelpers.swift */; };
+		EF4B834D263639160004640E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF4B834F263639160004640E /* Localizable.strings */; };
 		EF4DA84226336964006A070B /* NewsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4DA84126336964006A070B /* NewsFilter.swift */; };
 		EF4DA84F263436A5006A070B /* ScrollWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4DA84E263436A5006A070B /* ScrollWatcher.swift */; };
 		EF4DA85426343F87006A070B /* FilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4DA85326343F87006A070B /* FilterSection.swift */; };
@@ -108,6 +115,16 @@
 		EF4B8323263605F60004640E /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
 		EF4B83262636291A0004640E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		EF4B832A263629710004640E /* FilterSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionViewModel.swift; sourceTree = "<group>"; };
+		EF4B833C263636610004640E /* String+LocalizeTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+LocalizeTableName.swift"; sourceTree = "<group>"; };
+		EF4B833D263636610004640E /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
+		EF4B833E263636610004640E /* Localize_Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Localize_Swift.h; sourceTree = "<group>"; };
+		EF4B833F263636610004640E /* String+LocalizeBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+LocalizeBundle.swift"; sourceTree = "<group>"; };
+		EF4B8340263636610004640E /* String+LocalizedBundleTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+LocalizedBundleTableName.swift"; sourceTree = "<group>"; };
+		EF4B8341263636610004640E /* IBDesignable+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IBDesignable+Localize.swift"; sourceTree = "<group>"; };
+		EF4B8342263636610004640E /* Localize+UIHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Localize+UIHelpers.swift"; sourceTree = "<group>"; };
+		EF4B834E263639160004640E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EF4B83512636399B0004640E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		EF4B83522636399C0004640E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EF4DA84126336964006A070B /* NewsFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFilter.swift; sourceTree = "<group>"; };
 		EF4DA84E263436A5006A070B /* ScrollWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollWatcher.swift; sourceTree = "<group>"; };
 		EF4DA85326343F87006A070B /* FilterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSection.swift; sourceTree = "<group>"; };
@@ -225,6 +242,20 @@
 				EF4B832A263629710004640E /* FilterSectionViewModel.swift */,
 			);
 			path = FilterSection;
+			sourceTree = "<group>";
+		};
+		EF4B833B263636610004640E /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				EF4B833C263636610004640E /* String+LocalizeTableName.swift */,
+				EF4B833D263636610004640E /* Localize.swift */,
+				EF4B833E263636610004640E /* Localize_Swift.h */,
+				EF4B833F263636610004640E /* String+LocalizeBundle.swift */,
+				EF4B8340263636610004640E /* String+LocalizedBundleTableName.swift */,
+				EF4B8341263636610004640E /* IBDesignable+Localize.swift */,
+				EF4B8342263636610004640E /* Localize+UIHelpers.swift */,
+			);
+			path = Localize;
 			sourceTree = "<group>";
 		};
 		EF4DA85126343CF5006A070B /* NewsViewController */ = {
@@ -393,6 +424,7 @@
 		EFD439E52632DDD900B4DE14 = {
 			isa = PBXGroup;
 			children = (
+				EF4B834F263639160004640E /* Localizable.strings */,
 				EF69A6572633588500CF9535 /* SearchComponent */,
 				EF760D7E26330EC3003E1000 /* Network */,
 				EF760D7A26330DC5003E1000 /* Models */,
@@ -429,6 +461,7 @@
 		EFD43A092632DE5F00B4DE14 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EF4B833B263636610004640E /* Localize */,
 				EFD43A0A2632DE7400B4DE14 /* Observables */,
 				EF760D682632F52F003E1000 /* NavigationScrollBehavior.swift */,
 				EF4B8323263605F60004640E /* Throttler.swift */,
@@ -597,6 +630,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = EFD439E52632DDD900B4DE14;
 			packageReferences = (
@@ -621,6 +655,7 @@
 				EF941BD426346E1A0087F603 /* NewsCell.xib in Resources */,
 				EF69A66826335A5700CF9535 /* SearchViewController.xib in Resources */,
 				EFD43A2A2632DF7400B4DE14 /* ActionsFooterView.xib in Resources */,
+				EF4B834D263639160004640E /* Localizable.strings in Resources */,
 				EF760D5B2632F31A003E1000 /* InProgressView.xib in Resources */,
 				EFD439FB2632DDDB00B4DE14 /* Assets.xcassets in Resources */,
 			);
@@ -704,6 +739,7 @@
 				EFD43A162632DE7400B4DE14 /* PublishSubject.swift in Sources */,
 				EF760D8E263312B3003E1000 /* Constants.swift in Sources */,
 				EF69A66626335A5700CF9535 /* SearchResultCell.swift in Sources */,
+				EF4B8345263636610004640E /* String+LocalizeBundle.swift in Sources */,
 				EFF4DA782634D0C00046E67A /* UserDefaults+UserDefaultsService.swift in Sources */,
 				EF69A64F263357E000CF9535 /* KeyboardFrameObserver.swift in Sources */,
 				EF760D472632EFAC003E1000 /* FormViewController.swift in Sources */,
@@ -722,6 +758,7 @@
 				EF941BCE26346C110087F603 /* NewsSearchRequest.swift in Sources */,
 				EF941BD526346E1A0087F603 /* NewsCell.swift in Sources */,
 				EF1D0C9E2635E42400059F67 /* AppCoordinator.swift in Sources */,
+				EF4B8346263636610004640E /* String+LocalizedBundleTableName.swift in Sources */,
 				EFD43A192632DE7400B4DE14 /* Disposable.swift in Sources */,
 				EF4DA85426343F87006A070B /* FilterSection.swift in Sources */,
 				EFD43A522632E2CC00B4DE14 /* Style.swift in Sources */,
@@ -741,6 +778,8 @@
 				EF69A651263357E000CF9535 /* KeyboardStateProvider.swift in Sources */,
 				EFD43A4F2632E2CC00B4DE14 /* UIColor+SemanticColors.swift in Sources */,
 				EFD43A3A2632E0EE00B4DE14 /* UIButton+Helpers.swift in Sources */,
+				EF4B8348263636610004640E /* Localize+UIHelpers.swift in Sources */,
+				EF4B8344263636610004640E /* Localize.swift in Sources */,
 				EF4DA8582634490E006A070B /* NewsFilterViewController.swift in Sources */,
 				EF760D7C26330DD1003E1000 /* News.swift in Sources */,
 				EF760D5F2632F351003E1000 /* ProgressViewable.swift in Sources */,
@@ -772,6 +811,8 @@
 				EFF4DA7B2634D0EF0046E67A /* UserDefaultsKeys.swift in Sources */,
 				EF69A66926335A5700CF9535 /* SearchUICommand.swift in Sources */,
 				EFD43A6D2632EC8F00B4DE14 /* Assets.swift in Sources */,
+				EF4B8347263636610004640E /* IBDesignable+Localize.swift in Sources */,
+				EF4B8343263636610004640E /* String+LocalizeTableName.swift in Sources */,
 				EF760D8A26331297003E1000 /* APIError.swift in Sources */,
 				EF69A650263357E000CF9535 /* KeyboardScrollable.swift in Sources */,
 				EF69A67126335D2F00CF9535 /* NewsViewController.swift in Sources */,
@@ -781,10 +822,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		EF4B834F263639160004640E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF4B834E263639160004640E /* en */,
+				EF4B83522636399C0004640E /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		EFD439FC2632DDDB00B4DE14 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EFD439FD2632DDDB00B4DE14 /* Base */,
+				EF4B83512636399B0004640E /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -796,6 +847,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -857,6 +909,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

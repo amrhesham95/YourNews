@@ -135,6 +135,6 @@ private extension NewsSearchCommand {
 private extension NewsSearchCommand {
   
   enum Strings {
-    static var searchBarPlaceholder: String { "Search articles" }
+    static var searchBarPlaceholder: String { "Search articles".localized }
   }
 }

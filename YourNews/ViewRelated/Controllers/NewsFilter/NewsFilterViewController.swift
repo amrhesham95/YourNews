@@ -58,7 +58,7 @@ extension NewsFilterViewController {
   /// Configure footer view
   ///
   func configureFooterView() {
-    footerView.addAction(ButtonAction(title: "Submit", style: .default) { [weak self] in
+    footerView.addAction(ButtonAction(title: Strings.submit, style: .default) { [weak self] in
       guard let self = self else { return }
       self.delegate?.newsFilter(viewController: self, didTappedSearch: $0.button, with: self.filterSection.value)
     })
@@ -68,6 +68,14 @@ extension NewsFilterViewController {
   ///
   func configureHeaderView() {
     headerView.imageView.image = Asset.stretchyHeader.image
+  }
+}
+
+// MARK: - Strings
+//
+private extension NewsFilterViewController {
+  enum Strings {
+    static var submit: String { "Submit".localized }
   }
 }
 

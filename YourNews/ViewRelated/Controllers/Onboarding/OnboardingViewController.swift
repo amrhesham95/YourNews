@@ -65,7 +65,7 @@ extension OnboardingViewController {
   /// Configure footer view
   ///
   func configureFooterView() {
-    footerView.addAction(ButtonAction(title: "Submit", style: .default) { [weak self] _ in
+    footerView.addAction(ButtonAction(title: Strings.submit, style: .default) { [weak self] _ in
       guard let self = self else { return }
       self.viewModel.setFilter(filter: self.filterSection.value)
     })
@@ -78,3 +78,10 @@ extension OnboardingViewController {
   }
 }
 
+// MARK: - Strings
+//
+private extension OnboardingViewController {
+  enum Strings {
+    static var submit: String { "Submit".localized }
+  }
+}

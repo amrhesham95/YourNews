@@ -62,7 +62,7 @@ class FilterSection: Section {
   ///
   lazy var countriesRow: CountriesPushRow = {
     return CountriesPushRow { row in
-      row.title = Strings.countries
+      row.title = Strings.country
       row.value = value.country
       row.options = viewModel.allCountries
     }.onChange { [weak self] in
@@ -75,7 +75,7 @@ class FilterSection: Section {
   ///
   lazy var categoriesRow: CategoriesPushRow = {
     return CategoriesPushRow { row in
-      row.title = Strings.categories
+      row.title = Strings.category
       row.value = value.categories
       row.options = viewModel.categories
     }.onChange { [weak self] in
@@ -89,7 +89,7 @@ class FilterSection: Section {
 private extension FilterSection {
   
   enum Strings {
-    static var countries: String { "Countries" }
-    static var categories: String { "Categories" }
+    static var country: String { "Country".localized }
+    static var category: String { "Category".localized }
   }
 }
