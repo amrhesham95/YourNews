@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EF1D0C9E2635E42400059F67 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0C9D2635E42300059F67 /* AppCoordinator.swift */; };
+		EF2DBBFC26373F17001B53FF /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DBBFB26373F17001B53FF /* RealmStorage.swift */; };
 		EF4B8324263605F60004640E /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B8323263605F60004640E /* Throttler.swift */; };
 		EF4B83272636291A0004640E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B83262636291A0004640E /* Country.swift */; };
 		EF4B832B263629710004640E /* FilterSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B832A263629710004640E /* FilterSectionViewModel.swift */; };
@@ -112,6 +113,7 @@
 		4C021046198EA080A27B1140 /* Pods_YourNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YourNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D039CC77BAE652A8666913 /* Pods-YourNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourNews.debug.xcconfig"; path = "Target Support Files/Pods-YourNews/Pods-YourNews.debug.xcconfig"; sourceTree = "<group>"; };
 		EF1D0C9D2635E42300059F67 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		EF2DBBFB26373F17001B53FF /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		EF4B8323263605F60004640E /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
 		EF4B83262636291A0004640E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		EF4B832A263629710004640E /* FilterSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionViewModel.swift; sourceTree = "<group>"; };
@@ -233,6 +235,22 @@
 				4C021046198EA080A27B1140 /* Pods_YourNews.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF2DBBF926373EF5001B53FF /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				EF2DBBFA26373EFA001B53FF /* Realm */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		EF2DBBFA26373EFA001B53FF /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				EF2DBBFB26373F17001B53FF /* RealmStorage.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		EF4B8329263629610004640E /* FilterSection */ = {
@@ -425,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				EF4B834F263639160004640E /* Localizable.strings */,
+				EF2DBBF926373EF5001B53FF /* Storage */,
 				EF69A6572633588500CF9535 /* SearchComponent */,
 				EF760D7E26330EC3003E1000 /* Network */,
 				EF760D7A26330DC5003E1000 /* Models */,
@@ -751,6 +770,7 @@
 				EFF4DA7F2634D2FF0046E67A /* OnboardingViewModel.swift in Sources */,
 				EF69A652263357E000CF9535 /* KeyboardFrameAdjustmentProvider.swift in Sources */,
 				EF760D8026330ED8003E1000 /* NetworkManager.swift in Sources */,
+				EF2DBBFC26373F17001B53FF /* RealmStorage.swift in Sources */,
 				EF69A6552633580100CF9535 /* WebviewHelper.swift in Sources */,
 				EF69A66A26335A5700CF9535 /* FooterSpinnerView.swift in Sources */,
 				EF69A66B26335A5700CF9535 /* ReadOnlyConvertible.swift in Sources */,
