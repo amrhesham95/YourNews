@@ -37,6 +37,24 @@ public struct SourceNews: Codable {
     let name: String?
 }
 
+// MARK: - News+Realm
+extension News {
+  var storageNews: StorageNews {
+    let storageNews = StorageNews()
+    storageNews.author = author ?? ""
+    storageNews.articleDescription = articleDescription ?? ""
+    storageNews.content = content ?? ""
+    storageNews.publishedAt = publishedAt ?? ""
+    storageNews.title = title ?? ""
+    storageNews.url = url ?? ""
+    storageNews.urlToImage = urlToImage ?? ""
+    storageNews.sourceNewsID = newsSource?.id ?? ""
+    storageNews.sourceNewsName = newsSource?.name ?? ""
+
+    return storageNews
+  }
+}
+
 // MARK: - News + ReadOnlyConvertible
 //
 extension News: ReadOnlyConvertible {

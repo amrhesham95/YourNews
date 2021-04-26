@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EF1D0C9E2635E42400059F67 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0C9D2635E42300059F67 /* AppCoordinator.swift */; };
 		EF2DBBFC26373F17001B53FF /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DBBFB26373F17001B53FF /* RealmStorage.swift */; };
+		EF2DBC1326374345001B53FF /* StorageNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DBC1226374345001B53FF /* StorageNews.swift */; };
 		EF4B8324263605F60004640E /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B8323263605F60004640E /* Throttler.swift */; };
 		EF4B83272636291A0004640E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B83262636291A0004640E /* Country.swift */; };
 		EF4B832B263629710004640E /* FilterSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B832A263629710004640E /* FilterSectionViewModel.swift */; };
@@ -114,6 +115,7 @@
 		96D039CC77BAE652A8666913 /* Pods-YourNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourNews.debug.xcconfig"; path = "Target Support Files/Pods-YourNews/Pods-YourNews.debug.xcconfig"; sourceTree = "<group>"; };
 		EF1D0C9D2635E42300059F67 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		EF2DBBFB26373F17001B53FF /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
+		EF2DBC1226374345001B53FF /* StorageNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageNews.swift; sourceTree = "<group>"; };
 		EF4B8323263605F60004640E /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
 		EF4B83262636291A0004640E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		EF4B832A263629710004640E /* FilterSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionViewModel.swift; sourceTree = "<group>"; };
@@ -251,6 +253,14 @@
 				EF2DBBFB26373F17001B53FF /* RealmStorage.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		EF2DBC1126374316001B53FF /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				EF2DBC1226374345001B53FF /* StorageNews.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		EF4B8329263629610004640E /* FilterSection */ = {
@@ -416,6 +426,7 @@
 		EF760D7A26330DC5003E1000 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EF2DBC1126374316001B53FF /* Storage */,
 				EF760D7B26330DD1003E1000 /* News.swift */,
 				EF4DA84126336964006A070B /* NewsFilter.swift */,
 				EF941BCD26346C110087F603 /* NewsSearchRequest.swift */,
@@ -769,6 +780,7 @@
 				EFD43A512632E2CC00B4DE14 /* UIFont+App.swift in Sources */,
 				EFF4DA7F2634D2FF0046E67A /* OnboardingViewModel.swift in Sources */,
 				EF69A652263357E000CF9535 /* KeyboardFrameAdjustmentProvider.swift in Sources */,
+				EF2DBC1326374345001B53FF /* StorageNews.swift in Sources */,
 				EF760D8026330ED8003E1000 /* NetworkManager.swift in Sources */,
 				EF2DBBFC26373F17001B53FF /* RealmStorage.swift in Sources */,
 				EF69A6552633580100CF9535 /* WebviewHelper.swift in Sources */,
