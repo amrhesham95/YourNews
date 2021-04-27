@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoriteScreenViewController: ViewController {
+class FavoriteScreenViewController: UIViewController {
   
   // MARK: - Outlets
   

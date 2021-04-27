@@ -76,7 +76,6 @@
 		EFC9469326389F1E00D3D4A3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC9469226389F1E00D3D4A3 /* MainTabBarController.swift */; };
 		EFC946972638A00000D3D4A3 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC946962638A00000D3D4A3 /* AppTab.swift */; };
 		EFD439F22632DDD900B4DE14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F12632DDD900B4DE14 /* AppDelegate.swift */; };
-		EFD439F62632DDD900B4DE14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F52632DDD900B4DE14 /* ViewController.swift */; };
 		EFD439FB2632DDDB00B4DE14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD439FA2632DDDB00B4DE14 /* Assets.xcassets */; };
 		EFD439FE2632DDDB00B4DE14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFD439FC2632DDDB00B4DE14 /* LaunchScreen.storyboard */; };
 		EFD43A142632DE7400B4DE14 /* BehaviorSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A0B2632DE7400B4DE14 /* BehaviorSubject.swift */; };
@@ -192,7 +191,6 @@
 		EFC946962638A00000D3D4A3 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
 		EFD439EE2632DDD900B4DE14 /* YourNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD439F12632DDD900B4DE14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EFD439F52632DDD900B4DE14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EFD439FA2632DDDB00B4DE14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFD439FD2632DDDB00B4DE14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFD439FF2632DDDB00B4DE14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -507,7 +505,6 @@
 			isa = PBXGroup;
 			children = (
 				EFD439F12632DDD900B4DE14 /* AppDelegate.swift */,
-				EFD439F52632DDD900B4DE14 /* ViewController.swift */,
 				EFD439FC2632DDDB00B4DE14 /* LaunchScreen.storyboard */,
 				EFD439FF2632DDDB00B4DE14 /* Info.plist */,
 			);
@@ -850,7 +847,6 @@
 				EF4DA85426343F87006A070B /* FilterSection.swift in Sources */,
 				EFD43A522632E2CC00B4DE14 /* Style.swift in Sources */,
 				EF760D4B2632F0F6003E1000 /* ViewModel.swift in Sources */,
-				EFD439F62632DDD900B4DE14 /* ViewController.swift in Sources */,
 				EFD43A312632E03100B4DE14 /* NSObject+Helpers.swift in Sources */,
 				EF760D402632EF4A003E1000 /* OnboardingViewController.swift in Sources */,
 				EFD43A172632DE7400B4DE14 /* DisposeBase.swift in Sources */,
