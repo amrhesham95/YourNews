@@ -394,7 +394,6 @@
 				EF760D3E2632EF37003E1000 /* Controllers */,
 				EFD43A1D2632DEB100B4DE14 /* ReusableViews */,
 				EFD43A462632E2CC00B4DE14 /* Styles */,
-				EFD43A2C2632DFDB00B4DE14 /* Extensions */,
 				EF1D0C9D2635E42300059F67 /* AppCoordinator.swift */,
 			);
 			path = ViewRelated;
@@ -415,6 +414,7 @@
 		EF760D492632F0EB003E1000 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EFD439F12632DDD900B4DE14 /* AppDelegate.swift */,
 				EFF4DA732634D0530046E67A /* ServiceLocator */,
 				EF760D502632F134003E1000 /* BaseViewModel */,
 			);
@@ -487,20 +487,19 @@
 		EFD439E52632DDD900B4DE14 = {
 			isa = PBXGroup;
 			children = (
-				EFC946A12638D69000D3D4A3 /* Docs */,
-				EF4B834F263639160004640E /* Localizable.strings */,
-				EF2DBBF926373EF5001B53FF /* Storage */,
-				EF69A6572633588500CF9535 /* SearchComponent */,
-				EF760D7E26330EC3003E1000 /* Network */,
-				EF760D7A26330DC5003E1000 /* Models */,
 				EF760D492632F0EB003E1000 /* Classes */,
-				EFD43A692632EBDB00B4DE14 /* Resources */,
-				EF760D3D2632EF19003E1000 /* ViewRelated */,
-				EFD43A092632DE5F00B4DE14 /* Tools */,
-				EFD439F02632DDD900B4DE14 /* YourNews */,
-				EFD439EF2632DDD900B4DE14 /* Products */,
-				F7A685C25EBAC442E1F4DDB3 /* Pods */,
+				EFC946A12638D69000D3D4A3 /* Docs */,
+				EFD43A2C2632DFDB00B4DE14 /* Extensions */,
 				3FC8C5572554505C50338D0F /* Frameworks */,
+				EF760D7A26330DC5003E1000 /* Models */,
+				EF760D7E26330EC3003E1000 /* Network */,
+				F7A685C25EBAC442E1F4DDB3 /* Pods */,
+				EFD439EF2632DDD900B4DE14 /* Products */,
+				EFD43A692632EBDB00B4DE14 /* Resources */,
+				EF69A6572633588500CF9535 /* SearchComponent */,
+				EF2DBBF926373EF5001B53FF /* Storage */,
+				EFD43A092632DE5F00B4DE14 /* Tools */,
+				EF760D3D2632EF19003E1000 /* ViewRelated */,
 			);
 			sourceTree = "<group>";
 		};
@@ -510,16 +509,6 @@
 				EFD439EE2632DDD900B4DE14 /* YourNews.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		EFD439F02632DDD900B4DE14 /* YourNews */ = {
-			isa = PBXGroup;
-			children = (
-				EFD439F12632DDD900B4DE14 /* AppDelegate.swift */,
-				EFD439FC2632DDDB00B4DE14 /* LaunchScreen.storyboard */,
-				EFD439FF2632DDDB00B4DE14 /* Info.plist */,
-			);
-			path = YourNews;
 			sourceTree = "<group>";
 		};
 		EFD43A092632DE5F00B4DE14 /* Tools */ = {
@@ -613,6 +602,9 @@
 		EFD43A692632EBDB00B4DE14 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EFD439FC2632DDDB00B4DE14 /* LaunchScreen.storyboard */,
+				EFD439FF2632DDDB00B4DE14 /* Info.plist */,
+				EF4B834F263639160004640E /* Localizable.strings */,
 				EFD43A6C2632EC8F00B4DE14 /* Assets.swift */,
 				EFD439FA2632DDDB00B4DE14 /* Assets.xcassets */,
 			);
