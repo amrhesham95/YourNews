@@ -401,10 +401,12 @@ extension SearchViewController: SyncingCoordinatorDelegate {
   func sync(pageNumber: Int, pageSize: Int, reason: String?, isSearchMode: Bool, onCompletion: ((Bool) -> Void)? = nil) {
     let keyword = self.keyword
     transitionToSyncingState()
+    footerSpinnerView.startAnimating()
     searchUICommand.synchronizeModels(keyword: keyword,
                                       pageNumber: pageNumber,
                                       pageSize: pageSize, isSearchMode: isSearchMode,
                                       onCompletion: { [weak self] isCompleted in
+                                        self?.footerSpinnerView.stopAnimating()
                                         // Disregard OPs that don't really match the latest keyword
                                         if keyword == self?.keyword {
                                           self?.transitionToResultsUpdatedState()
