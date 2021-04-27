@@ -9,12 +9,6 @@
 import UIKit
 import Kingfisher
 
-//MARK: - delegate function
-
-// delegate for add and remove from database
-protocol NewsRealmDelegate {
-  func toggleFavorite(cell: NewsCell)
-}
 
 // delegate for detect which source label is clicked
 protocol SourceLabelClickableDelegate {
@@ -32,7 +26,6 @@ class NewsCell: UITableViewCell {
   @IBOutlet weak var starFavoriteBtn: UIImageView!
   
   //MARK: - Properties
-  var favoriteDelegate: NewsRealmDelegate?
   var sourceLabelDelegate: SourceLabelClickableDelegate?
   var indexPath: IndexPath?
   
@@ -49,7 +42,6 @@ class NewsCell: UITableViewCell {
   // MARK: - Lifecycle
   
   override func awakeFromNib() {
-    setupSourceLabelClick()
     setupStarbuttonClick()
   }
   
@@ -62,19 +54,7 @@ class NewsCell: UITableViewCell {
     starFavoriteBtn.addGestureRecognizer(starButtnTapGestureRecognizer)
   }
   
-  
-  func setupSourceLabelClick() {
-    let sourceLabelTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(sourceLabelDidTapped(tapGestureRecognizer:)))
-    sourceLabel.isUserInteractionEnabled = true
-    sourceLabel.addGestureRecognizer(sourceLabelTapGestureRecognizer)
-  }
-  
-  
-  
-  @objc func sourceLabelDidTapped(tapGestureRecognizer: UITapGestureRecognizer){
-    sourceLabelDelegate?.didClickedOnSourceLabel(at:self)
-  }
-  
+    
   @objc func favoriteBtnDidTapped(tapGestureRecognizer: UITapGestureRecognizer){
     toggleFavorite()
   }
