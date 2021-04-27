@@ -22,6 +22,6 @@ extension Country: Equatable {}
 //
 extension Country: CustomStringConvertible {
   var description: String {
-    self.name
+    return name
   }
 }

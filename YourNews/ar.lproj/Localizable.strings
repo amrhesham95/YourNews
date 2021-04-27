@@ -11,3 +11,18 @@
 "Country" = "البلد";
 "Category" = "النوع";
 "Search articles" = "بحث المقالات";
+
+// MARK: - Categories
+"Business" = "تجارة";
+"Entertainment" = "ترفيه";
+"General" = "مواضيع عامة";
+"Health" = "صحة";
+"Science" = "علوم";
+"Sports" = "رياضة";
+"Technology" = "تكنولوجيا";
+
+// MARK: - TabBar
+"News" = "أخبار";
+"Favorite" = "المفضلة";
+
+"We're sorry, we couldn't find results" = "نأسف ، لم نتمكن من العثور على نتائج";

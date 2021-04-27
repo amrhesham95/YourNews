@@ -15,7 +15,7 @@ class FilterSection: Section {
   // MARK: - Typealias
   typealias Element = NewsFilter
   typealias CountriesPushRow = PushRow<Country>
-  typealias CategoriesPushRow = MultipleSelectorRow<String>
+  typealias CategoriesPushRow = MultipleSelectorRow<Category>
   
   // MARK: - Properties
   
@@ -58,7 +58,7 @@ class FilterSection: Section {
   
   // MARK: - Rows
   
-  /// Row CreateDateFrom
+  /// Countries row
   ///
   lazy var countriesRow: CountriesPushRow = {
     return CountriesPushRow { row in
@@ -71,7 +71,7 @@ class FilterSection: Section {
     }
   }()
   
-  /// Row CreateDateTo
+  /// Categories row
   ///
   lazy var categoriesRow: CategoriesPushRow = {
     return CategoriesPushRow { row in

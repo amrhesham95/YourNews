@@ -15,20 +15,33 @@ class FilterSectionViewModel: ViewModel {
   
   lazy var allCountries: [Country] = {
     var countries: [Country] = []
-
+    
+    let local = Localize.isArabic ? NSLocale(localeIdentifier: "ar") : NSLocale(localeIdentifier: "en_UK")
+    
     for code in NSLocale.isoCountryCodes  {
         let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: code])
-        let name = NSLocale(localeIdentifier: "en_UK").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country not found for code: \(code)"
+        let name = local.displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country not found for code: \(code)"
         let country = Country(name: name, code: code)
         countries.append(country)
     }
     return countries
   }()
   
-  lazy var categories: [String] = {
-    ["business", "entertainment", "general", "health", "science", "sports", "technology"]
+  lazy var categories: [Category] = {
+    ["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"].map{ Category(title: $0.localized, value: $0) }
   }()
+  
+}
 
-  
-  
+struct Category: Codable {
+  let title: String
+  let value: String
+}
+
+extension Category: Hashable {}
+
+extension Category: CustomStringConvertible {
+  var description: String {
+    return title
+  }
 }

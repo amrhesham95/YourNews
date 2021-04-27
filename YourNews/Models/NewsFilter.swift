@@ -11,5 +11,5 @@ import Foundation
 //
 struct NewsFilter: Codable {
   var country: Country
-  var categories: Set<String>
+  var categories: Set<Category>
 }

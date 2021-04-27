@@ -11,3 +11,19 @@
 "Countries" = "Countries";
 "Categories" = "Categories";
 "Search articles" = "Search articles";
+
+// MARK: - Categories
+"Business" = "Business";
+"Entertainment" = "Entertainment";
+"General" = "General";
+"Health" = "Health";
+"Science" = "Science";
+"Sports" = "Sports";
+"Technology" = "Technology";
+
+// MARK: - TabBar
+"News" = "News";
+"Favorite" = "Favorite";
+
+
+"We're sorry, we couldn't find results" = "We're sorry, we couldn't find results";

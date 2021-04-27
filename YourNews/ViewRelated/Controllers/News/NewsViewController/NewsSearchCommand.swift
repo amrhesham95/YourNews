@@ -60,7 +60,7 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   func configureEmptyStateViewControllerBeforeDisplay(viewController: EmptyStateViewController,
                                                       searchKeyword: String) {
 
-      let format = "We're sorry, we couldn't find results"
+    let format = "We're sorry, we couldn't find results".localized
       let message = NSAttributedString(string: format)
 
     DispatchQueue.main.async {
@@ -128,7 +128,8 @@ private extension NewsSearchCommand {
   /// - Returns: Valid request as `NewsSearchRequest`
   private func makeRequest(pageNumber: Int, pageSize: Int) -> NewsSearchRequest? {
     guard let newsFilter = newsFilter else { return nil }
-    return NewsSearchRequest(newsFilter: newsFilter, pageNumber: pageNumber, pageSize: pageSize)
+    let categories = newsFilter.categories.map { $0.value }
+    return NewsSearchRequest(country: newsFilter.country.code, categories: categories, pageNumber: pageNumber, pageSize: pageSize)
   }
 }
 

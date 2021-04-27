@@ -9,7 +9,9 @@ import Foundation
 
 // MARK: - NewsSearchRequest
 struct NewsSearchRequest {
-  let newsFilter: NewsFilter
+  
+  let country: String
+  let categories: [String]
   let pageNumber: Int
   let pageSize: Int
 }
