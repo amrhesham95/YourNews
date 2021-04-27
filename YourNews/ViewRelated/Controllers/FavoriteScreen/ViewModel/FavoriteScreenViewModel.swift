@@ -32,9 +32,9 @@ class FavoriteScreenViewModel: ViewModel {
     loadAllFavorites()
   }
   
-  func modelFor(_ row: Int) -> News {
+  func modelFor(_ row: Int) -> NewsCellViewModel {
     let storageNews = listSubject.value[row]
-    return News(storageNews: storageNews)
+    return NewsCellViewModel(model: storageNews)
   }
   
   func configureUnfavoriteHandler(handler: @escaping (() -> Void)) {

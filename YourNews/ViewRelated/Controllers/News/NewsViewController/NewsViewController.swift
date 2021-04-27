@@ -21,7 +21,7 @@ class NewsViewController: UIViewController {
   /// MyTicketsListSelectorDataSource
   ///
   private(set) lazy var newsSearchCommand: NewsSearchCommand = {
-    return NewsSearchCommand(onSelectSearchResult: handleOnSelectArticle(article:))
+    return NewsSearchCommand(onSelectSearchResult: handleOnSelectArticle(viewModel:))
   }()
   
   /// Search view controller for all departments
@@ -66,8 +66,8 @@ private extension NewsViewController {
 //
 private extension NewsViewController {
   
-  func handleOnSelectArticle(article: News) {
-    WebviewHelper.launch(article.url, with: self)
+  func handleOnSelectArticle(viewModel: NewsCellViewModel) {
+    WebviewHelper.launch(viewModel.model.url, with: self)
   }
   
   func presentFilter() {

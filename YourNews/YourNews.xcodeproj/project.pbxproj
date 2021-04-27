@@ -72,6 +72,7 @@
 		EF941BD726346E1A0087F603 /* BaseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF941BD326346E1A0087F603 /* BaseCardView.swift */; };
 		EF941BE1263472A20087F603 /* NewsCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF941BE0263472A20087F603 /* NewsCellRepresentable.swift */; };
 		EF941BE72634A54A0087F603 /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF941BE62634A54A0087F603 /* UIImageView+ImageLoader.swift */; };
+		EFC9468E26387D3E00D3D4A3 /* NewsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC9468D26387D3E00D3D4A3 /* NewsCellViewModel.swift */; };
 		EFD439F22632DDD900B4DE14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F12632DDD900B4DE14 /* AppDelegate.swift */; };
 		EFD439F62632DDD900B4DE14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F52632DDD900B4DE14 /* ViewController.swift */; };
 		EFD439FB2632DDDB00B4DE14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD439FA2632DDDB00B4DE14 /* Assets.xcassets */; };
@@ -184,6 +185,7 @@
 		EF941BD326346E1A0087F603 /* BaseCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCardView.swift; sourceTree = "<group>"; };
 		EF941BE0263472A20087F603 /* NewsCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellRepresentable.swift; sourceTree = "<group>"; };
 		EF941BE62634A54A0087F603 /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
+		EFC9468D26387D3E00D3D4A3 /* NewsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellViewModel.swift; sourceTree = "<group>"; };
 		EFD439EE2632DDD900B4DE14 /* YourNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD439F12632DDD900B4DE14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFD439F52632DDD900B4DE14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				EF941BD126346E1A0087F603 /* NewsCell.swift */,
 				EF941BD026346E190087F603 /* NewsCell.xib */,
 				EF941BE0263472A20087F603 /* NewsCellRepresentable.swift */,
+				EFC9468D26387D3E00D3D4A3 /* NewsCellViewModel.swift */,
 			);
 			path = NewsCell;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 				EF69A66626335A5700CF9535 /* SearchResultCell.swift in Sources */,
 				EF4B8345263636610004640E /* String+LocalizeBundle.swift in Sources */,
 				EFF4DA782634D0C00046E67A /* UserDefaults+UserDefaultsService.swift in Sources */,
+				EFC9468E26387D3E00D3D4A3 /* NewsCellViewModel.swift in Sources */,
 				EF69A64F263357E000CF9535 /* KeyboardFrameObserver.swift in Sources */,
 				EF760D472632EFAC003E1000 /* FormViewController.swift in Sources */,
 				EF941BD726346E1A0087F603 /* BaseCardView.swift in Sources */,

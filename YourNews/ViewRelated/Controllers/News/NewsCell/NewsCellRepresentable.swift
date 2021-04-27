@@ -18,29 +18,3 @@ protocol NewsCellRepresentable {
   var imageURL: String? { get }
   var isFavorite: Bool? { get }
 }
-
-
-// MARK: - News+Cell
-//
-extension News: NewsCellRepresentable {
-
-  var description: String? {
-    articleDescription
-  }
-  
-  var date: String? {
-    publishedAt
-  }
-  
-  var source: String? {
-    newsSource?.name
-  }
-  
-  var imageURL: String? {
-    urlToImage
-  }
-  
-  var isFavorite: Bool? {
-    return try! ServiceLocator.newsStore.isFavorite(article: self.storageNews)
-  }
-}

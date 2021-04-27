@@ -12,9 +12,9 @@ import UIKit
 final class NewsSearchCommand: NSObject, SearchUICommand {
   
   // MARK: - Typealiases
-  typealias Model = News
-  typealias CellViewModel = News
-  typealias ResultsControllerModel = News
+  typealias Model = NewsCellViewModel
+  typealias CellViewModel = NewsCellViewModel
+  typealias ResultsControllerModel = NewsCellViewModel
   
   // MARK: - Callbacks
   
@@ -44,7 +44,7 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   
   // MARK: Init
   
-  init(newsStore:  NewsStoreProtocol = ServiceLocator.newsStore, onSelectSearchResult: ((News) -> Void)?) {
+  init(newsStore:  NewsStoreProtocol = ServiceLocator.newsStore, onSelectSearchResult: ((NewsCellViewModel) -> Void)?) {
     self.onSelectSearchResult = onSelectSearchResult
     self.newsStore = newsStore
   }
@@ -95,7 +95,8 @@ final class NewsSearchCommand: NSObject, SearchUICommand {
   
   func handleSuccessResponse(_ response: NewsResponse) {
     let articles = response.articles ?? []
-    resultsController.insert(articles)
+    let list = articles.compactMap { NewsCellViewModel(model: $0.storageNews) }
+    resultsController.insert(list)
   }
 }
 

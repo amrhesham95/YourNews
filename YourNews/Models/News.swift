@@ -65,16 +65,3 @@ extension News {
     return storageNews
   }
 }
-
-// MARK: - News + ReadOnlyConvertible
-//
-extension News: ReadOnlyConvertible {
-  public typealias ReadOnlyType = News
-  
-  public func toReadOnly() -> News {
-    return self
-  }
-  public func toTypeErasedReadOnly() -> Any {
-    return self
-  }
-}

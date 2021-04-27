@@ -35,9 +35,14 @@ class NewsCell: UITableViewCell {
   var favoriteDelegate: NewsRealmDelegate?
   var sourceLabelDelegate: SourceLabelClickableDelegate?
   var indexPath: IndexPath?
-  var model: News?
+  
+  var viewModel: NewsCellViewModel? {
+    didSet {
+      updateCell()
+    }
+  }
+
   var shouldReloadTableView: (() -> Void)?
-  let viewModel = FavoriteScreenViewModel()
   
   static let cellID = "\(NewsCell.self)"
   
@@ -75,10 +80,12 @@ class NewsCell: UITableViewCell {
   }
   
   func toggleFavorite() {
-    guard let model = model else {
+    
+    guard let model = viewModel?.model else {
       return
     }
-    model.isFavorite ?? false ? deleteFavorite(model) : addFavorite(model)
+    let news = News(storageNews: model)
+    viewModel?.isFavorite ?? false ? deleteFavorite(news) : addFavorite(news)
   }
   
   func addFavorite(_ model: News) {
@@ -96,24 +103,31 @@ class NewsCell: UITableViewCell {
   }
 }
 
+// MARK: - View Configurations
+//
+extension NewsCell {
+  func updateCell() {
+    titleLabel?.text = viewModel?.title
+    descriptionLabel?.text = viewModel?.description
+    newsImageView?.setImage(urlString: viewModel?.imageURL, placeholder: Asset.placeholderImageIcon.image)
+    dateLabel.text = viewModel?.date
+    sourceLabel.text = viewModel?.source
+    starFavoriteBtn.image = viewModel?.isFavorite ?? false ? Asset.favoriteStar.image : Asset.unfavoriteStar.image
+  }
+}
+
 //MARK: - NewsCell+SearchResultCell
 
 extension NewsCell: SearchResultCell {
   
-  typealias SearchModel = News
+  typealias SearchModel = NewsCellViewModel
   
   static func register(for tableView: UITableView) {
     tableView.registerNib(for: self)
   }
   
   func configureCell(searchModel: SearchModel) {
-    model = searchModel
-    titleLabel?.text = searchModel.title
-    descriptionLabel?.text = searchModel.author
-    newsImageView?.setImage(urlString: searchModel.imageURL, placeholder: Asset.placeholderImageIcon.image)
-    dateLabel.text = searchModel.date
-    sourceLabel.text = searchModel.source
-    starFavoriteBtn.image = model?.isFavorite ?? false ? Asset.favoriteStar.image : Asset.unfavoriteStar.image
+    viewModel = searchModel
   }
 }
 
