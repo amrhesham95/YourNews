@@ -72,7 +72,7 @@ private extension NewsViewController {
   
   func presentFilter() {
     let filterViewController = NewsFilterViewController(delegate: self)
-    present(filterViewController, animated: true)
+    navigationController?.pushViewController(filterViewController, animated: true)
   }
 }
 
@@ -80,7 +80,7 @@ private extension NewsViewController {
 //
 extension NewsViewController: NewsFilterDelegate {
   func newsFilter(viewController: NewsFilterViewController, didTappedSearch button: UIButton, with result: NewsFilter) {
-    viewController.dismiss(animated: true)
+    navigationController?.popToRootViewController(animated: true)
     newsSearchCommand.updateFilter(with: result)
   }
 }

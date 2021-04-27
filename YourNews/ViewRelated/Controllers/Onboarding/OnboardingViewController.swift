@@ -42,7 +42,7 @@ class OnboardingViewController: FormViewController {
 extension OnboardingViewController {
   func viewModelFilterBinding() {
     viewModel.filterObservable.subscribe { [weak self] _ in
-      self?.coordinator?.showNewsViewController()
+      self?.coordinator?.showNewsScreen()
     }
   }
 }

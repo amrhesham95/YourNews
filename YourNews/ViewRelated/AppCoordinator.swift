@@ -10,14 +10,19 @@ import UIKit
 // MARK: - AppCoordinator
 //
 class AppCoordinator {
-  
-  //    private let tabBarController: MainTabBarController
-  
+    
   private var isLoggedIn: Bool?
   
   // MARK: - Properties
   
   let navigationController: UINavigationController
+  
+  /// Tab Bar Controller
+  ///
+  lazy var tabBarController: MainTabBarController? = {
+      MainTabBarController()
+  }()
+
   
   // MARK: - init
   
@@ -25,19 +30,15 @@ class AppCoordinator {
     self.navigationController = navigationController
   }
   
-  //  init(tabBarController: MainTabBarController) {
-  //      self.navigationController = UINavigationController()
-  //      self.tabBarController = tabBarController
-  //  }
   // MARK: - Start
   
   func start() {
     
-    guard let defaultFilter = ServiceLocator.defaultFilter else {
+    guard let _ = ServiceLocator.defaultFilter else {
       showOnboardingViewController()
       return
     }
-    showNewsViewController()
+    showNewsScreen()
   }
 }
 
@@ -50,15 +51,14 @@ extension AppCoordinator {
   func showOnboardingViewController() {
     let viewController = OnboardingViewController(viewModel: OnboardingViewModel())
     viewController.coordinator = self
-    navigationController.pushViewController(viewController, animated: true)
-    //        tabBarController.present(viewController, animated: isAnimated)
+    navigationController.setViewControllers([viewController], animated: true)
+    tabBarController?.setViewControllers([navigationController], animated: true)
   }
   
   /// Show NewsViewController.
   ///
-  func showNewsViewController() {
-    let viewController = NewsViewController()
-    navigationController.setViewControllers([viewController], animated: true)
+  func showNewsScreen() {
+    tabBarController?.showNewsScreen()
   }
 }
 

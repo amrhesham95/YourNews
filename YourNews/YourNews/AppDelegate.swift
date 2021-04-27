@@ -51,7 +51,7 @@ private extension AppDelegate {
     let navigationController = UINavigationController()
     appCoordinator = AppCoordinator(navigationController: navigationController)
 //    window.rootViewController = FavoriteScreenViewController()
-    window.rootViewController = appCoordinator?.navigationController // to be replaced with tab bar if implemented
+    window.rootViewController = appCoordinator?.tabBarController // to be replaced with tab bar if implemented
     self.window = window
   }  
 }
