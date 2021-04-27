@@ -35,6 +35,9 @@ class NewsCell: UITableViewCell {
   var favoriteDelegate: NewsRealmDelegate?
   var sourceLabelDelegate: SourceLabelClickableDelegate?
   var indexPath: IndexPath?
+  var model: News?
+  var shouldReloadTableView: (() -> Void)?
+  let viewModel = FavoriteScreenViewModel()
   
   static let cellID = "\(NewsCell.self)"
   
@@ -68,8 +71,28 @@ class NewsCell: UITableViewCell {
   }
   
   @objc func favoriteBtnDidTapped(tapGestureRecognizer: UITapGestureRecognizer){
-    
-    favoriteDelegate?.toggleFavorite(cell: self)
+    toggleFavorite()
+  }
+  
+  func toggleFavorite() {
+    guard let model = model else {
+      return
+    }
+    model.isFavorite ?? false ? deleteFavorite(model) : addFavorite(model)
+  }
+  
+  func addFavorite(_ model: News) {
+    ServiceLocator.newsStore.addFavorite(article: model.storageNews, onCompletion: didReceiveIsFavoriteResult)
+  }
+  
+  func deleteFavorite(_ model: News) {
+    ServiceLocator.newsStore.deleteArticle(article: model.storageNews, onCompletion: didReceiveIsFavoriteResult)
+  }
+  
+  func didReceiveIsFavoriteResult(_ result: Result<Bool, GeneralError>) {
+    if case .success = result {
+      shouldReloadTableView?()
+    }
   }
 }
 
@@ -84,12 +107,13 @@ extension NewsCell: SearchResultCell {
   }
   
   func configureCell(searchModel: SearchModel) {
+    model = searchModel
     titleLabel?.text = searchModel.title
     descriptionLabel?.text = searchModel.author
     newsImageView?.setImage(urlString: searchModel.imageURL, placeholder: Asset.placeholderImageIcon.image)
     dateLabel.text = searchModel.date
     sourceLabel.text = searchModel.source
-    starFavoriteBtn.image = searchModel.isFavorite ?? false ? Asset.favoriteStar.image : Asset.unfavoriteStar.image
+    starFavoriteBtn.image = model?.isFavorite ?? false ? Asset.favoriteStar.image : Asset.unfavoriteStar.image
   }
 }
 

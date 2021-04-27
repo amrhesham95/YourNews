@@ -102,6 +102,9 @@
 		EFD43A542632E2CC00B4DE14 /* UIColor+SystemColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A4D2632E2CC00B4DE14 /* UIColor+SystemColors.swift */; };
 		EFD43A582632E42B00B4DE14 /* UISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A572632E42B00B4DE14 /* UISettings.swift */; };
 		EFD43A6D2632EC8F00B4DE14 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD43A6C2632EC8F00B4DE14 /* Assets.swift */; };
+		EFE3F30826377695009F216A /* FavoriteScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE3F30626377695009F216A /* FavoriteScreenViewController.swift */; };
+		EFE3F30926377695009F216A /* FavoriteScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFE3F30726377695009F216A /* FavoriteScreenViewController.xib */; };
+		EFE3F30E263776D8009F216A /* FavoriteScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE3F30D263776D8009F216A /* FavoriteScreenViewModel.swift */; };
 		EFF4DA672634B4920046E67A /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4DA662634B4920046E67A /* ServiceLocator.swift */; };
 		EFF4DA752634D06E0046E67A /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4DA742634D06E0046E67A /* UserDefaultsService.swift */; };
 		EFF4DA782634D0C00046E67A /* UserDefaults+UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4DA772634D0C00046E67A /* UserDefaults+UserDefaultsService.swift */; };
@@ -213,6 +216,9 @@
 		EFD43A4D2632E2CC00B4DE14 /* UIColor+SystemColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+SystemColors.swift"; sourceTree = "<group>"; };
 		EFD43A572632E42B00B4DE14 /* UISettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISettings.swift; sourceTree = "<group>"; };
 		EFD43A6C2632EC8F00B4DE14 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = SOURCE_ROOT; };
+		EFE3F30626377695009F216A /* FavoriteScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteScreenViewController.swift; sourceTree = "<group>"; };
+		EFE3F30726377695009F216A /* FavoriteScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteScreenViewController.xib; sourceTree = "<group>"; };
+		EFE3F30D263776D8009F216A /* FavoriteScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteScreenViewModel.swift; sourceTree = "<group>"; };
 		EFF4DA662634B4920046E67A /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		EFF4DA742634D06E0046E67A /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		EFF4DA772634D0C00046E67A /* UserDefaults+UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserDefaultsService.swift"; sourceTree = "<group>"; };
@@ -390,6 +396,7 @@
 		EF760D3E2632EF37003E1000 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EFE3F30526377614009F216A /* FavoriteScreen */,
 				EFF4DA7D2634D2EF0046E67A /* Onboarding */,
 				EF4DA85A263449CE006A070B /* NewsFilter */,
 				EF69A67326335DA400CF9535 /* News */,
@@ -587,6 +594,32 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		EFE3F30526377614009F216A /* FavoriteScreen */ = {
+			isa = PBXGroup;
+			children = (
+				EFE3F30C263776C1009F216A /* ViewModel */,
+				EFE3F30B263776BC009F216A /* View */,
+			);
+			path = FavoriteScreen;
+			sourceTree = "<group>";
+		};
+		EFE3F30B263776BC009F216A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFE3F30626377695009F216A /* FavoriteScreenViewController.swift */,
+				EFE3F30726377695009F216A /* FavoriteScreenViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFE3F30C263776C1009F216A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EFE3F30D263776D8009F216A /* FavoriteScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		EFF4DA732634D0530046E67A /* ServiceLocator */ = {
 			isa = PBXGroup;
 			children = (
@@ -686,6 +719,7 @@
 				EF69A6482633575D00CF9535 /* EmptyStateViewController.xib in Resources */,
 				EFD439FE2632DDDB00B4DE14 /* LaunchScreen.storyboard in Resources */,
 				EF941BD426346E1A0087F603 /* NewsCell.xib in Resources */,
+				EFE3F30926377695009F216A /* FavoriteScreenViewController.xib in Resources */,
 				EF69A66826335A5700CF9535 /* SearchViewController.xib in Resources */,
 				EFD43A2A2632DF7400B4DE14 /* ActionsFooterView.xib in Resources */,
 				EF4B834D263639160004640E /* Localizable.strings in Resources */,
@@ -809,9 +843,11 @@
 				EFF4DA672634B4920046E67A /* ServiceLocator.swift in Sources */,
 				EF69A67526335DB000CF9535 /* NewsSearchCommand.swift in Sources */,
 				EF941BE1263472A20087F603 /* NewsCellRepresentable.swift in Sources */,
+				EFE3F30826377695009F216A /* FavoriteScreenViewController.swift in Sources */,
 				EFD43A152632DE7400B4DE14 /* Observer.swift in Sources */,
 				EF69A651263357E000CF9535 /* KeyboardStateProvider.swift in Sources */,
 				EFD43A4F2632E2CC00B4DE14 /* UIColor+SemanticColors.swift in Sources */,
+				EFE3F30E263776D8009F216A /* FavoriteScreenViewModel.swift in Sources */,
 				EFD43A3A2632E0EE00B4DE14 /* UIButton+Helpers.swift in Sources */,
 				EF4B8348263636610004640E /* Localize+UIHelpers.swift in Sources */,
 				EF4B8344263636610004640E /* Localize.swift in Sources */,

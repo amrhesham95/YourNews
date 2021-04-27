@@ -15,6 +15,7 @@ class NewsStore: NewsStoreProtocol {
   
   var remote: NewsRemoteProtocol?
   let storageManager = RealmStorage()
+  
   // MARK: - Init
   
   init(remote: NewsRemoteProtocol) {
@@ -32,6 +33,10 @@ class NewsStore: NewsStoreProtocol {
       
       complitionHandler(.success(response))
     }
+  }
+  
+  func isFavorite(article: StorageNews) throws -> Bool {
+    return try storageManager.checkObjectIsExistInDB(StorageNews.self, key: article.url)
   }
 }
 
@@ -71,6 +76,27 @@ extension NewsStore {
       return
     }
     completion(news, nil)
+  }
+}
+
+// MARK: - Favorite Handlers
+//
+extension NewsStore {
+  
+  /// add new article to favorite
+  func addFavorite(article: StorageNews, onCompletion: @escaping  AddFavoriteNewsCompletion) {
+    do {
+      try storageManager.insertNewObject(object: article)
+      onCompletion(.success(true))
+    } catch {
+      assertionFailure("Something went wrong. Error: \(error)")
+      onCompletion(.failure(.init()))
+    }
+  }
+  
+  func deleteArticle(article: StorageNews, onCompletion: @escaping  AddFavoriteNewsCompletion) {
+    storageManager.deleteObject(article, key: article.url)
+    onCompletion(.success(true))
   }
 }
 

@@ -21,7 +21,7 @@ final class StorageNews: Object {
   @objc dynamic var content: String = ""
   @objc dynamic var sourceNewsID: String = ""
   @objc dynamic var sourceNewsName: String = ""
-  
+  @objc dynamic var isFavorite: Bool = false
   override static func primaryKey() -> String? {
     return "url"
   }

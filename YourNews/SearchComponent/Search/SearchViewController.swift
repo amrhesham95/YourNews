@@ -172,11 +172,12 @@ where Cell.SearchModel == Command.CellViewModel {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(Cell.self, for: indexPath)
+    var cell = tableView.dequeueReusableCell(Cell.self, for: indexPath)
     
     if let model = resultsController.safeObject(at: indexPath) {
       let cellModel = searchUICommand.createCellViewModel(model: model)
       cell.configureCell(searchModel: cellModel)
+      cell.shouldReloadTableView = { tableView.reloadData() }
     }
     return cell
   }

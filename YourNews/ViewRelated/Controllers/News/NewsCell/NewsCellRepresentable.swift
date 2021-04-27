@@ -41,6 +41,6 @@ extension News: NewsCellRepresentable {
   }
   
   var isFavorite: Bool? {
-    false
+    return try! ServiceLocator.newsStore.isFavorite(article: self.storageNews)
   }
 }

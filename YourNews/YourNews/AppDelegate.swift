@@ -50,6 +50,7 @@ private extension AppDelegate {
     window.makeKeyAndVisible()
     let navigationController = UINavigationController()
     appCoordinator = AppCoordinator(navigationController: navigationController)
+//    window.rootViewController = FavoriteScreenViewController()
     window.rootViewController = appCoordinator?.navigationController // to be replaced with tab bar if implemented
     self.window = window
   }  
