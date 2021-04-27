@@ -75,6 +75,7 @@
 		EFC9468E26387D3E00D3D4A3 /* NewsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC9468D26387D3E00D3D4A3 /* NewsCellViewModel.swift */; };
 		EFC9469326389F1E00D3D4A3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC9469226389F1E00D3D4A3 /* MainTabBarController.swift */; };
 		EFC946972638A00000D3D4A3 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC946962638A00000D3D4A3 /* AppTab.swift */; };
+		EFC946A32638D6A800D3D4A3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EFC946A22638D6A800D3D4A3 /* README.md */; };
 		EFD439F22632DDD900B4DE14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD439F12632DDD900B4DE14 /* AppDelegate.swift */; };
 		EFD439FB2632DDDB00B4DE14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD439FA2632DDDB00B4DE14 /* Assets.xcassets */; };
 		EFD439FE2632DDDB00B4DE14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFD439FC2632DDDB00B4DE14 /* LaunchScreen.storyboard */; };
@@ -189,6 +190,7 @@
 		EFC9468D26387D3E00D3D4A3 /* NewsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellViewModel.swift; sourceTree = "<group>"; };
 		EFC9469226389F1E00D3D4A3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		EFC946962638A00000D3D4A3 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
+		EFC946A22638D6A800D3D4A3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EFD439EE2632DDD900B4DE14 /* YourNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD439F12632DDD900B4DE14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFD439FA2632DDDB00B4DE14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -474,9 +476,18 @@
 			path = MainTabBar;
 			sourceTree = "<group>";
 		};
+		EFC946A12638D69000D3D4A3 /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				EFC946A22638D6A800D3D4A3 /* README.md */,
+			);
+			path = Docs;
+			sourceTree = "<group>";
+		};
 		EFD439E52632DDD900B4DE14 = {
 			isa = PBXGroup;
 			children = (
+				EFC946A12638D69000D3D4A3 /* Docs */,
 				EF4B834F263639160004640E /* Localizable.strings */,
 				EF2DBBF926373EF5001B53FF /* Storage */,
 				EF69A6572633588500CF9535 /* SearchComponent */,
@@ -732,6 +743,7 @@
 			files = (
 				EF69A6482633575D00CF9535 /* EmptyStateViewController.xib in Resources */,
 				EFD439FE2632DDDB00B4DE14 /* LaunchScreen.storyboard in Resources */,
+				EFC946A32638D6A800D3D4A3 /* README.md in Resources */,
 				EF941BD426346E1A0087F603 /* NewsCell.xib in Resources */,
 				EFE3F30926377695009F216A /* FavoriteScreenViewController.xib in Resources */,
 				EF69A66826335A5700CF9535 /* SearchViewController.xib in Resources */,
