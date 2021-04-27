@@ -18,12 +18,19 @@ class FavoriteScreenViewController: ViewController {
   private let viewModel = FavoriteScreenViewModel()
   let disposeBag = DisposeBag()
   
+  // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
     configureTableView()
     configureViewModel()
     viewModel.viewDidLoad()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    viewModel.loadAllFavorites()
   }
 }
 

@@ -145,6 +145,7 @@ where Cell.SearchModel == Command.CellViewModel {
     
     navigationController?.setNavigationBarHidden(true, animated: true)
     searchBar.becomeFirstResponder()
+    tableView.reloadData()
   }
   
   override func viewDidAppear(_ animated: Bool) {
