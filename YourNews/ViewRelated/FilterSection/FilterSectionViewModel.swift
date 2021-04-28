@@ -32,16 +32,3 @@ class FilterSectionViewModel: ViewModel {
   }()
   
 }
-
-struct Category: Codable {
-  let title: String
-  let value: String
-}
-
-extension Category: Hashable {}
-
-extension Category: CustomStringConvertible {
-  var description: String {
-    return title
-  }
-}
